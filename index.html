@@ -7,13 +7,48 @@
 		<meta name="description" content="Conaire Deagan - Astrophysics PhD Candidate at UNSW, researching stellar activity, exoplanets, and optical physics.">
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+		<style>
+			.profile-container {
+				position: relative;
+				width: 150px;
+				height: 150px;
+				margin: 0 auto;
+			}
+			.profile-image {
+				width: 100%;
+				height: 100%;
+				border-radius: 50%;
+				object-fit: cover;
+			}
+			.arrow {
+				position: absolute;
+				top: 50%;
+				transform: translateY(-50%);
+				font-size: 24px;
+				color: #fff;
+				background-color: rgba(0, 0, 0, 0.5);
+				padding: 10px;
+				cursor: pointer;
+				z-index: 10;
+			}
+			.arrow-left {
+				left: -30px;
+			}
+			.arrow-right {
+				right: -30px;
+			}
+		</style>
 	</head>
 	<body class="is-preload">
 
 		<!-- Header -->
 			<header id="header">
 				<div class="inner">
-					<a href="#" class="image avatar"><img src="images/me.jpg" alt="Conaire Deagan" /></a>
+					<div class="profile-container">
+						<img src="images/profile1.jpg" alt="Conaire Deagan" class="profile-image" id="profile-image">
+						<div class="arrow arrow-left" id="prev-image">&lt;</div>
+						<div class="arrow arrow-right" id="next-image">&gt;</div>
+					</div>
 					<h1><strong>Conaire Deagan</strong></h1>
 					<p>Astrophysics/Astronomy PhD Candidate<br />
 					University of New South Wales</p>
@@ -155,6 +190,7 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script src="assets/js/profile-rotator.js"></script>
 
 	</body>
 </html>
