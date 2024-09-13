@@ -25,18 +25,32 @@
 	<body class="is-preload">
 
 		<!-- Header -->
-			<header id="header">
-				<div class="inner">
-					<div class="profile-container">
-						<img src="images/profile3.jpg" alt="Conaire Deagan" class="profile-image" id="profile-image">
-						<div class="arrow arrow-left" id="prev-image">&lt;</div>
-						<div class="arrow arrow-right" id="next-image">&gt;</div>
-					</div>
-					<h1><strong>Conaire Deagan</strong></h1>
-					<p>Astrophysics/Astronomy PhD Candidate<br />
-					University of New South Wales</p>
+		<header id="header">
+			<div class="inner">
+				<div class="profile-container">
+					<img src="images/profile1.jpg" alt="Conaire Deagan" class="profile-image" id="profile-image">
 				</div>
-			</header>
+				<h1><strong>Conaire Deagan</strong></h1>
+				<p>Astrophysics/Astronomy PhD Candidate<br />
+				University of New South Wales</p>
+			</div>
+		</header>
+
+		<!-- JavaScript for rotating profile images -->
+		<script>
+			const profileImage = document.getElementById('profile-image');
+			const images = ['images/profile1.jpg', 'images/profile2.jpg', 'images/profile3.jpg'];
+			let currentImageIndex = 0;
+
+			function changeImage() {
+				currentImageIndex = (currentImageIndex + 1) % images.length;
+				profileImage.src = images[currentImageIndex];
+			}
+
+			setInterval(changeImage, 5000); // Change image every 5 seconds
+		</script>
+	</body>
+</html>
 
 		<!-- Main -->
 			<div id="main">
