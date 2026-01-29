@@ -1,264 +1,999 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html lang="en">
-	<head>
-		<title>Conaire Deagan - Astrophysics PhD Candidate</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<meta name="description" content="Conaire Deagan - Astrophysics PhD Candidate at UNSW, researching stellar activity, exoplanets, and optical physics.">
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-		<style>
-			.profile-container {
-				position: relative;
-				width: 150px;
-				height: 150px;
-				margin: 0 auto;
-			}
-			.profile-image {
-				width: 100%;
-				height: 100%;
-				border-radius: 50%;
-				object-fit: cover;
-			}
-		</style>
-	</head>
-	<!-- Google tag (gtag.js) -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=G-LBB6NP4BPD"></script>
-	<script>
-	  window.dataLayer = window.dataLayer || [];
-	  function gtag(){dataLayer.push(arguments);}
-	  gtag('js', new Date());
-	
-	  gtag('config', 'G-LBB6NP4BPD');
-	</script>
-	<body class="is-preload">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conaire Deagan - Astrophysics PhD Candidate</title>
+    <meta name="description" content="Conaire Deagan - Astrophysics PhD Candidate at UNSW, researching stellar activity, exoplanets, and optical physics.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LBB6NP4BPD"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-LBB6NP4BPD');
+    </script>
+    
+    <style>
+        :root {
+            /* Jupiter-inspired palette - Dark mode (default) */
+            --bg-primary: #0a0a0a;
+            --bg-secondary: #141414;
+            --bg-card: #1a1a1a;
+            --bg-accent: #242424;
+            --text-primary: #f0ebe4;
+            --text-secondary: #a8a099;
+            --text-muted: #6a6560;
+            --accent-blue: #4a8fa8;
+            --accent-blue-hover: #5ca3be;
+            --accent-orange: #c97a4a;
+            --accent-orange-hover: #e8a070;
+            --border: #2a2a2a;
+            --shadow: rgba(0, 0, 0, 0.4);
+            --card-hover-shadow: rgba(74, 143, 168, 0.15);
+        }
 
-		<!-- Header -->
-		<header id="header">
-			<div class="inner">
-				<div class="profile-container">
-					<img src="images/profile4.jpg" alt="Conaire Deagan" class="profile-image" id="profile-image">
-				</div>
-				<h1><strong>Conaire Deagan</strong></h1>
-				<p>Astrophysics/Astronomy PhD Candidate<br />
-				University of New South Wales</p>
-			</div>
-		</header>
+        [data-theme="light"] {
+            --bg-primary: #f5f0e8;
+            --bg-secondary: #ebe5db;
+            --bg-card: #ffffff;
+            --bg-accent: #e8e0d4;
+            --text-primary: #1a1a1a;
+            --text-secondary: #4a4540;
+            --text-muted: #7a756e;
+            --accent-blue: #2a5a6e;
+            --accent-blue-hover: #3d7a8e;
+            --accent-orange: #b86a3a;
+            --accent-orange-hover: #c97a4a;
+            --border: #d5cfc5;
+            --shadow: rgba(0, 0, 0, 0.08);
+            --card-hover-shadow: rgba(42, 90, 110, 0.1);
+        }
 
-		<!-- JavaScript for rotating profile images -->
-		<script>
-			const profileImage = document.getElementById('profile-image');
-			const images = ['images/profile4.jpg', 'images/profile3.jpg', 'images/profile2.jpg'];
-			let currentImageIndex = 0;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-			function changeImage() {
-				currentImageIndex = (currentImageIndex + 1) % images.length;
-				profileImage.src = images[currentImageIndex];
-			}
+        html {
+            scroll-behavior: smooth;
+        }
 
-			setInterval(changeImage, 5000); // Change image every 5 seconds
-		</script>
-	</body>
-</html>
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.7;
+            font-size: 16px;
+            font-weight: 400;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
 
-		<!-- Main -->
-			<div id="main">
+        /* ===== SIDEBAR ===== */
+        #header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            width: 30%;
+            min-width: 280px;
+            max-width: 380px;
+            background: linear-gradient(135deg, rgba(10, 10, 10, 0.85), rgba(10, 10, 10, 0.7)), 
+                        url('images/bg.jpg') center center;
+            background-size: cover;
+            background-attachment: scroll;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            text-align: center;
+            z-index: 100;
+            overflow: hidden;
+        }
 
-				<!-- Introduction -->
-					<section id="intro">
-						<header class="major">
-							<h2>I am Conaire Deagan</h2>
-						</header>
-                                                <p>An astrophysics PhD candidate interested in solar-like stellar activity, Wolf-Rayet stars, exoplanets, and optical physics. I am a member of the NEarby Worlds and Their Stars (<a href="https://newts.space/">NEWTS research group</a>), and a science member on the <a href="https://toliman.space/">TOLIMAN</a> project. Additionally, while I don't actively research SETI, it is a research interest of mine and something I like to talk about. I am always open to collaboration, email me if you would like to collaborate. Click on the icons on the left to find my BlueSky, Github, LinkedIn, and Email. Find my full email address at the bottom of this page.</p>
-						<div class="action-buttons">
-							<a href="mailto:c.deagan@unsw.edu.au" class="button icon solid fa-envelope">Email Me</a>
-							<a href="assets/ConaireDeagan_AcademicResume_Sep2024.pdf" class="button icon solid fa-file">Download My CV</a>
-							<a href="https://github.com/ConaireD/UNSW_Astro_Stats_Club" class="button icon solid fa-balance-scale">UNSW AstroStats Club</a>
+        [data-theme="light"] #header {
+            background: linear-gradient(135deg, rgba(245, 240, 232, 0.75), rgba(245, 240, 232, 0.6)), 
+                        url('images/bg.jpg') center center;
+            background-size: cover;
+        }
 
-						</div>
-					</section>
+        /* Parallax effect */
+        #header::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            left: -20px;
+            right: -20px;
+            bottom: -20px;
+            background: url('images/bg.jpg') center center;
+            background-size: cover;
+            z-index: -1;
+            transform: translateZ(0);
+        }
 
-				<!-- Research Interests -->
-					<section id="research">
-						<h2>Research Interests</h2>
-						<div class="row">
-							<article class="col-6 col-12-xsmall work-item">
-								<h3>Stellar Activity</h3>
-								<p>Investigating techniques to map large scale magnetic surface features of unresolved stars using high-precision astrometry. Inferring what information is recoverable from stellar surface mapping. </p>
-							</article>
-							<article class="col-6 col-12-xsmall work-item">
-								<h3>Exoplanets</h3>
-								<p>I am particularly interested the "Earth-twin/analogue" class of exoplanets. I want to help understand their local environments in terms of stellar activity, space weather, and habitability. </p>
-							</article>
-							<article class="col-6 col-12-xsmall work-item">
-								<h3>Optical Physics</h3>
-								<p>Developing, characterising, and optimising novel astrophotonic systems to extend the probable exoplanet parameter space to lower mass, habitable zone exoplanets.</p>
-							</article>
-							<article class="col-6 col-12-xsmall work-item">
-								<h3>Wolf-Rayet Stars</h3>
-								<p>These are extremely rare, short lived, extreme stars. In our Milky way, we expect approximately 1000 to exist. Despite their rarity, they make up roughly 15% of all radio stars. I am interested in simultaneous optical and radio observations of these stars, as these should be excellent probes of stellar magnetic physics.</p>
-							</article>
+        .profile-container {
+            position: relative;
+            width: 150px;
+            height: 150px;
+            margin-bottom: 1.5rem;
+        }
 
-						</div>
-					</section>
+        .profile-image {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
 
-				<!-- Publications -->
-					<section id="publications">
-						<h2>Latest Publications</h2>
-						<div class="row">
-							<article class="col-12 work-item">
-								<h3>Astrometric exoplanet detection survives solar-like stellar contamination</h3>
-								<p>Deagan, C. et al. (2026) - Coming soon!</p>
-								<a href="#" class="button">Submitted to MNRAS</a>
-							</article>
-							<article class="col-12 work-item">
-							    <h3>Inferring hemispheric asymmetries of stellar active regions through the information content of astrometric signals</h3>
-							    <p>Deagan, C. et al. (2026) – Submitted to MNRAS</p>
-							    <a href="https://arxiv.org/abs/2601.11707" class="button" target="_blank" rel="noopener noreferrer">
-							        Read Preprint
-							    </a>
-							</article>
-						</div>
-					</section>
-				<!-- Talks -->
-					<section id="Talks">
-						<h2>Talks</h2>
-						<p>By default, please assume all figures and results in these presentations are unpublished, and thus please don't share them without my permission, unless they also appear in a publication. </p>
-						<div class="row">
-							<article class="col-6 col-12-xsmall work-item">
-								<h3>The surface of unresolved Sun-like stars</h3>
-								<p>Presented at the Stars in Brisbane / Australian Exoplanet Worshop 10, 2024</p>
-								<a href="https://docs.google.com/presentation/d/1LBe1dyxRpLjH5zy_NYsbD7xu9TwFswhs/edit?usp=sharing&ouid=114202023185536484164&rtpof=true&sd=true" class="button small">View Slides</a>
+        .profile-image:hover {
+            transform: scale(1.03);
+        }
 
-							</article>
-							<article class="col-6 col-12-xsmall work-item">
-								<h3>Star-Planet Interactions: How tracking star-spots can give insights into planetary architecture, atmospheric composition, and habitability</h3>
-								<p>Presented at the Australian Centre for Astrobiology Seminar, 2024</p>
-								<a href="https://docs.google.com/presentation/d/16frb0oNvWlHP835OL_59c280v4uHUotI/edit?usp=drive_link&ouid=114202023185536484164&rtpof=true&sd=true" class="button small">View Slides</a>
+        #header h1 {
+            font-family: 'Instrument Serif', Georgia, serif;
+            font-size: 2rem;
+            font-weight: 400;
+            color: #fff;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.01em;
+        }
 
-							</article>
-							<article class="col-6 col-12-xsmall work-item">
-								<h3>The place of Astrometry in SETI / High Precision Astrometry: Not just for exoplanets</h3>
-								<p>Presented at Interstellar Frontiers: Bridging SETI, Astrobiology, and the SKA, 2024</p>
-								<a href="https://docs.google.com/presentation/d/1LzTpW3TDAsMg_vZapnjtMzetCZsqF_tb/edit?usp=drive_link&ouid=114202023185536484164&rtpof=true&sd=true" class="button small">View Slides</a>
-							</article>
-							<article class="col-6 col-12-xsmall work-item">
-								<h3>Star-spots, stellar dynamos and habitable exoplanet astrometry</h3>
-								<p>Presented at Australian Exoplanet Workshop 9, 2023</p>
-								<a href="https://docs.google.com/presentation/d/1VkNks956BYRCpYMPLSyvjEjprRVmC56C/edit?usp=drive_link&ouid=114202023185536484164&rtpof=true&sd=true" class="button small">View Slides</a>
+        [data-theme="light"] #header h1 {
+            color: var(--text-primary);
+        }
 
-							</article>
-						</div>
-					</section>
+        #header .subtitle {
+            font-size: 0.95rem;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 1.5rem;
+            line-height: 1.5;
+        }
 
-				<!-- Posters -->
-					<section id="posters">
-						<h2>Conference Posters</h2>
-						<div class="row">
-							<article class="col-6 col-12-xsmall work-item">
-								<a href="images/fulls/CoolStars22-ConaireDeagan-Final-UNSWPRINTJOB.pdf" class="image fit thumb"><img src="images/thumbs/CoolStars22-ConaireDeagan-Final.png" alt="Cool Stars 22, 2024 Poster" /></a>
-								<h3>Towards Stellar Obliquities: Recovering Stellar Inclinations via High Precision Astrometric Monitering</h3>
-								<p>Presented at Cool Stars 22, 2024</p>
-								<a href="images/fulls/CoolStars22-ConaireDeagan-Final-UNSWPRINTJOB.pdf" class="button small">View Poster</a>
-							</article>
-							<article class="col-6 col-12-xsmall work-item">
-								<a href="images/fulls/ESSV Conaire Deagan Poster - Final.pdf" class="image fit thumb"><img src="images/thumbs/ESSV Conaire Deagan Poster - Final.png" alt="Extreme Solar Systems V, 2024 Poster" /></a>
-								<h3>Recovering Stellar Inclinatiopn with High Precision Astrometry</h3>
-								<p>Presented at Extreme Solar Systems V, 2024</p>
-								<a href="images/fulls/ESSV Conaire Deagan Poster - Final.pdf" class="button small">View Poster</a>
-							</article>
+        [data-theme="light"] #header .subtitle {
+            color: var(--text-secondary);
+        }
 
+        /* Social Icons in Sidebar */
+        .sidebar-social {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
 
-							<article class="col-6 col-12-xsmall work-item">
-								<a href="images/fulls/ConaireDeagan_ASA_2023_POSTER.pdf" class="image fit thumb"><img src="images/thumbs/ASA2023.png" alt="ASA 2023 Poster" /></a>
-								<h3>Inferring properties of stellar systems via astrometric monitoring</h3>
-								<p>Presented at ASA 2023</p>
-								<a href="images/fulls/ConaireDeagan_ASA_2023_POSTER.pdf" class="button small">View Poster</a>
-							</article>
-						</div>
-					</section>
+        .sidebar-social a {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 1.1rem;
+            transition: all 0.2s ease;
+            text-decoration: none;
+        }
 
-				<!-- Teaching -->
-					<section id="teaching">
-						<h2>Teaching Experience</h2>
-						<div class="row">
-							<div class="col-6 col-12-small">
-								<h3>Feedback for Teachers (FFT) Report</h3>
-								<ul>
-									<li>Overall Positive Response Rate: 91.85%</li>
-									<li>Number of Responses: 30</li>
-								</ul>
-							</div>
-							<div class="col-6 col-12-small">
-								<h3>Courses Taught</h3>
-								<ul>
-									<li>QBUS3600: Business Analytics in Practice (Head Tutor) @ USYD </li>
-									<li>QBUS6600: Data Analytics for Business Capstone (Tutor) @ USYD </li>
-									<li>BUSS6002: Data Science in Business (Tutor) @ USYD </li>
-									<li>PHYS4016: Bayesian Data Inference and Machine Learning (Marker) @ USYD </li>
-								</ul>
-							</div>
-						</div>
-					</section>
-					<section id="A challenge">
-						<h2>A challenge</h2>
-						<p>Below is a link to a message. If you can work out what the message says, please contact me. If you correctly work it out, I'll buy you a beer/coffee/chocolate if we ever meet. There are no red herrings or tricks in the message. The message is not encrypted - you don't need to know any cryptography. Good Luck!</p>
-						<a href="https://drive.google.com/file/d/1vGNUS5o24Ky3PzWYD56i0bnSXNPGJ_kK/view?usp=sharing" class="button small">Accept Challenge?</a> 
-                                                <a href="https://forms.gle/dgFWc132VNZNmzV38" class="button small">Post Challenge Survey</a>
-					</section>
+        .sidebar-social a:hover {
+            background: var(--accent-orange);
+            color: #fff;
+            transform: translateY(-2px);
+        }
 
-				<!-- Contact -->
-					<section id="contact">
-						<h2>Get In Touch</h2>
-						<p>I'm always happy to collaborate on new projects or discuss my research. Feel free to reach out! If you are a student of mine, please contact me via official channels. These are likely listed on the Canvas page.</p>
-						<div class="row">
-							<div class="col-4 col-12-small">
-								<ul class="labeled-icons">
-									<li>
-										<h3 class="icon solid fa-envelope"><span class="label">Email</span></h3>
-										<a href="mailto:c.deagan@unsw.edu.au">c.deagan@unsw.edu.au</a>
-									</li>
-									<li>
-										<h3 class="icon brands fa-linkedin"><span class="label">LinkedIn</span></h3>
-										<a href="https://www.linkedin.com/in/conaire-deagan-7a6569159/">LinkedIn Profile</a>
-									</li>
-									<li>
-										<h3 class="icon solid fa-home"><span class="label">Address</span></h3>
-										School of Physics<br />
-										UNSW Sydney<br />
-										NSW 2052, Australia
-									</li>
-								</ul>
-							</div>
-						</div>
-					</section>
+        [data-theme="light"] .sidebar-social a {
+            background: rgba(0, 0, 0, 0.1);
+            color: var(--text-secondary);
+        }
 
-			</div>
+        [data-theme="light"] .sidebar-social a:hover {
+            background: var(--accent-orange);
+            color: #fff;
+        }
 
-		<!-- Footer -->
-			<footer id="footer">
-				<div class="inner">
-					<ul class="icons">
-						<li><a href="https://web-cdn.bsky.app/profile/did:plc:4s7mco7btvhtu2iqoqcnf6vp" class="icon brands fa-bluesky"><span class="label">BlueSky</span></a></li>
-						<li><a href="https://github.com/ConaireD" class="icon brands fa-github"><span class="label">Github</span></a></li>
-						<li><a href="https://www.linkedin.com/in/conaire-deagan-7a6569159" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
-						<li><a href="mailto:c.deagan@unsw.edu.au" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
-					</ul>
-					<ul class="copyright">
-						<li>&copy; 2024 Conaire Deagan</li>
-						<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-					</ul>
-				</div>
-			</footer>
+        /* Theme Toggle in Sidebar */
+        .theme-toggle {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 1rem;
+            cursor: pointer;
+            padding: 0.5rem;
+            border-radius: 50%;
+            width: 36px;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease;
+        }
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.poptrox.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-			<script src="assets/js/profile-rotator.js"></script>
+        .theme-toggle:hover {
+            background: rgba(255, 255, 255, 0.2);
+            color: #fff;
+        }
 
-	</body>
+        [data-theme="light"] .theme-toggle {
+            background: rgba(0, 0, 0, 0.1);
+            color: var(--text-secondary);
+        }
+
+        [data-theme="light"] .theme-toggle:hover {
+            background: rgba(0, 0, 0, 0.2);
+            color: var(--text-primary);
+        }
+
+        /* ===== MAIN CONTENT ===== */
+        #main {
+            margin-left: 30%;
+            min-width: 600px;
+            padding: 4rem 3rem;
+        }
+
+        @media (min-width: 1400px) {
+            #main {
+                margin-left: 380px;
+            }
+        }
+
+        section {
+            margin-bottom: 5rem;
+        }
+
+        section:last-child {
+            margin-bottom: 2rem;
+        }
+
+        h2 {
+            font-family: 'Instrument Serif', Georgia, serif;
+            font-size: 2rem;
+            font-weight: 400;
+            margin-bottom: 2rem;
+            color: var(--text-primary);
+            letter-spacing: -0.01em;
+        }
+
+        h3 {
+            font-family: 'Instrument Serif', Georgia, serif;
+            font-size: 1.3rem;
+            font-weight: 400;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+        }
+
+        p {
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+
+        a {
+            color: var(--accent-blue);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        a:hover {
+            color: var(--accent-blue-hover);
+        }
+
+        /* Intro Section */
+        #intro .bio {
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin-bottom: 2rem;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+
+        .btn-primary {
+            background: var(--accent-orange);
+            color: #fff;
+        }
+
+        .btn-primary:hover {
+            background: var(--accent-orange-hover);
+            color: #fff;
+            transform: translateY(-1px);
+        }
+
+        .btn-secondary {
+            background: var(--bg-card);
+            color: var(--text-primary);
+            border: 1px solid var(--border);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--accent-blue);
+            background: var(--bg-accent);
+            transform: translateY(-1px);
+        }
+
+        /* Research Grid */
+        .research-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.25rem;
+        }
+
+        .research-card {
+            background: var(--bg-card);
+            padding: 1.75rem;
+            border-radius: 10px;
+            border: 1px solid var(--border);
+            transition: all 0.3s ease;
+        }
+
+        .research-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 40px var(--card-hover-shadow);
+            border-color: var(--accent-blue);
+        }
+
+        .research-card h3 {
+            margin-bottom: 0.75rem;
+        }
+
+        .research-card p {
+            font-size: 0.95rem;
+            margin-bottom: 0;
+            line-height: 1.6;
+        }
+
+        .research-tag {
+            display: inline-block;
+            font-size: 0.7rem;
+            padding: 0.2rem 0.5rem;
+            background: var(--accent-blue);
+            color: #fff;
+            border-radius: 3px;
+            margin-top: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        /* Publications */
+        .publication-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+        }
+
+        .publication {
+            background: var(--bg-card);
+            padding: 1.5rem 1.75rem;
+            border-radius: 10px;
+            border: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            transition: all 0.3s ease;
+        }
+
+        .publication:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px var(--card-hover-shadow);
+            border-color: var(--accent-blue);
+        }
+
+        .publication-info h3 {
+            margin-bottom: 0.25rem;
+            font-size: 1.15rem;
+        }
+
+        .publication-info p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 0;
+        }
+
+        .publication-status {
+            font-size: 0.8rem;
+            padding: 0.4rem 0.9rem;
+            border-radius: 20px;
+            background: var(--bg-accent);
+            color: var(--text-secondary);
+            white-space: nowrap;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+
+        .publication-status.preprint {
+            background: var(--accent-blue);
+            color: #fff;
+        }
+
+        .publication-status.preprint:hover {
+            background: var(--accent-blue-hover);
+        }
+
+        /* Talks Grid */
+        .talks-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.25rem;
+        }
+
+        .talk-card {
+            background: var(--bg-card);
+            border-radius: 10px;
+            border: 1px solid var(--border);
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .talk-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 40px var(--card-hover-shadow);
+            border-color: var(--accent-blue);
+        }
+
+        .talk-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            line-height: 1.4;
+        }
+
+        .talk-card .venue {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            margin-bottom: 1rem;
+        }
+
+        .talk-card .btn {
+            padding: 0.5rem 1rem;
+            font-size: 0.85rem;
+        }
+
+        /* Poster Grid */
+        .poster-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.25rem;
+        }
+
+        .poster-card {
+            background: var(--bg-card);
+            border-radius: 10px;
+            border: 1px solid var(--border);
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .poster-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 40px var(--card-hover-shadow);
+            border-color: var(--accent-blue);
+        }
+
+        .poster-thumb {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .poster-content {
+            padding: 1.25rem;
+        }
+
+        .poster-content h3 {
+            font-size: 1rem;
+            margin-bottom: 0.4rem;
+            line-height: 1.4;
+        }
+
+        .poster-content .venue {
+            color: var(--text-muted);
+            font-size: 0.8rem;
+            margin-bottom: 0.75rem;
+        }
+
+        /* Teaching */
+        .teaching-content {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 2.5rem;
+            align-items: start;
+        }
+
+        .teaching-highlight {
+            background: var(--bg-card);
+            padding: 2rem;
+            border-radius: 10px;
+            border: 1px solid var(--border);
+            text-align: center;
+            min-width: 160px;
+        }
+
+        .teaching-highlight .stat {
+            font-family: 'Instrument Serif', Georgia, serif;
+            font-size: 2.5rem;
+            color: var(--accent-orange);
+            line-height: 1;
+        }
+
+        .teaching-highlight .label {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            margin-top: 0.5rem;
+        }
+
+        .courses-list {
+            list-style: none;
+        }
+
+        .courses-list li {
+            padding: 0.9rem 0;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .courses-list li:last-child {
+            border-bottom: none;
+        }
+
+        .course-name {
+            font-weight: 500;
+            color: var(--text-primary);
+        }
+
+        .course-role {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* Challenge Section */
+        .challenge-section {
+            background: var(--bg-card);
+            border-radius: 10px;
+            border: 1px solid var(--border);
+            padding: 2.5rem;
+            text-align: center;
+        }
+
+        .challenge-section h2 {
+            margin-bottom: 1rem;
+        }
+
+        .challenge-section p {
+            max-width: 500px;
+            margin: 0 auto 1.5rem;
+        }
+
+        .challenge-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* Contact */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .contact-item i {
+            font-size: 1.25rem;
+            color: var(--accent-orange);
+            margin-top: 0.2rem;
+        }
+
+        .contact-item a {
+            color: var(--text-primary);
+        }
+
+        .contact-item a:hover {
+            color: var(--accent-blue);
+        }
+
+        .contact-item span {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border);
+            text-align: center;
+        }
+
+        footer p {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        /* Section note */
+        .section-note {
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+            font-size: 0.9rem;
+            font-style: italic;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 1024px) {
+            #header {
+                position: relative;
+                width: 100%;
+                max-width: none;
+                min-width: auto;
+                padding: 3rem 2rem;
+            }
+
+            #main {
+                margin-left: 0;
+                min-width: auto;
+                padding: 2rem 1.5rem;
+            }
+
+            .teaching-content {
+                grid-template-columns: 1fr;
+            }
+
+            .teaching-highlight {
+                max-width: 200px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            #header {
+                padding: 2.5rem 1.5rem;
+            }
+
+            .profile-container {
+                width: 120px;
+                height: 120px;
+            }
+
+            #header h1 {
+                font-size: 1.75rem;
+            }
+
+            h2 {
+                font-size: 1.75rem;
+            }
+
+            .research-grid,
+            .talks-grid,
+            .poster-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .publication {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Sidebar Header -->
+    <header id="header">
+        <button class="theme-toggle" onclick="toggleTheme()" title="Toggle theme">
+            <i class="fas fa-sun" id="theme-icon"></i>
+        </button>
+        
+        <div class="profile-container">
+            <img src="images/profile4.jpg" alt="Conaire Deagan" class="profile-image" id="profile-image">
+        </div>
+        
+        <h1>Conaire Deagan</h1>
+        <p class="subtitle">Astrophysics PhD Candidate<br>University of New South Wales</p>
+        
+        <div class="sidebar-social">
+            <a href="https://orcid.org/0009-0008-4420-5848" target="_blank" title="ORCID"><i class="ai ai-orcid"></i></a>
+            <a href="https://bsky.app/profile/did:plc:4s7mco7btvhtu2iqoqcnf6vp" target="_blank" title="Bluesky"><i class="fab fa-bluesky"></i></a>
+            <a href="https://github.com/ConaireD" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/conaire-deagan-7a6569159" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="mailto:c.deagan@unsw.edu.au" title="Email"><i class="fas fa-envelope"></i></a>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div id="main">
+        <!-- Intro -->
+        <section id="intro">
+            <h2>About</h2>
+            <p class="bio">
+                I develop methods to map the surfaces of stars we cannot resolve, using high-precision astrometry to recover information invisible to photometry alone. 
+                Member of the <a href="https://newts.space/">NEWTS research group</a> and science team on the <a href="https://toliman.space/">TOLIMAN</a> mission. 
+                Always open to collaboration.
+            </p>
+            <div class="cta-buttons">
+                <a href="mailto:c.deagan@unsw.edu.au" class="btn btn-primary">
+                    <i class="fas fa-envelope"></i> Get in Touch
+                </a>
+                <a href="assets/ConaireDeagan_AcademicResume_Sep2024.pdf" class="btn btn-secondary">
+                    <i class="fas fa-file-alt"></i> CV
+                </a>
+                <a href="https://github.com/ConaireD/UNSW_Astro_Stats_Club" class="btn btn-secondary">
+                    <i class="fas fa-chart-bar"></i> AstroStats Club
+                </a>
+            </div>
+        </section>
+
+        <!-- Research -->
+        <section id="research">
+            <h2>Research</h2>
+            <div class="research-grid">
+                <div class="research-card">
+                    <h3>Stellar Surface Mapping</h3>
+                    <p>Extending frameworks for stellar surface reconstruction using spherical harmonics. Astrometry accesses modes invisible to photometry—particularly odd-ℓ modes encoding hemispheric asymmetries.</p>
+                    <span class="research-tag">Primary</span>
+                </div>
+                <div class="research-card">
+                    <h3>Astrometric Jitter</h3>
+                    <p>Reframing "astrometric jitter" as a signal encoding stellar surface structure rather than noise. Quantifying stellar activity limits for missions like TOLIMAN.</p>
+                    <span class="research-tag">Primary</span>
+                </div>
+                <div class="research-card">
+                    <h3>Earth-twin Detection</h3>
+                    <p>High-precision astrometry offers a path to detecting Earth-mass planets in habitable zones—a parameter space largely inaccessible to Doppler spectroscopy.</p>
+                </div>
+                <div class="research-card">
+                    <h3>Astrophotonics</h3>
+                    <p>Developing novel optical systems to extend exoplanet detection to lower masses and wider separations, particularly diffractive pupil techniques.</p>
+                </div>
+                <div class="research-card">
+                    <h3>Wolf-Rayet Stars</h3>
+                    <p>These rare (~1000 in the Milky Way) extreme stars constitute ~15% of radio stars. Interested in simultaneous optical and radio observations.</p>
+                </div>
+                <div class="research-card">
+                    <h3>SETI</h3>
+                    <p>Maintaining an interest in the role of high-precision astrometry in technosignature searches—astrometry isn't just for exoplanets.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Publications -->
+        <section id="publications">
+            <h2>Publications</h2>
+            <div class="publication-list">
+                <div class="publication">
+                    <div class="publication-info">
+                        <h3>Astrometric exoplanet detection survives solar-like stellar contamination</h3>
+                        <p>Deagan, C. et al. (2026)</p>
+                    </div>
+                    <span class="publication-status">Submitted to MNRAS</span>
+                </div>
+                <div class="publication">
+                    <div class="publication-info">
+                        <h3>Inferring hemispheric asymmetries of stellar active regions through the information content of astrometric signals</h3>
+                        <p>Deagan, C. et al. (2026)</p>
+                    </div>
+                    <a href="https://arxiv.org/abs/2601.11707" class="publication-status preprint" target="_blank">
+                        arXiv:2601.11707 →
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Talks -->
+        <section id="talks">
+            <h2>Talks</h2>
+            <p class="section-note">Unless published elsewhere, please treat figures and results as unpublished work.</p>
+            <div class="talks-grid">
+                <div class="talk-card">
+                    <h3>The surface of unresolved Sun-like stars</h3>
+                    <p class="venue">Stars in Brisbane / AEW10, 2024</p>
+                    <a href="https://docs.google.com/presentation/d/1LBe1dyxRpLjH5zy_NYsbD7xu9TwFswhs/edit?usp=sharing&ouid=114202023185536484164&rtpof=true&sd=true" class="btn btn-secondary" target="_blank">Slides</a>
+                </div>
+                <div class="talk-card">
+                    <h3>Star-Planet Interactions: Tracking star-spots for planetary insights</h3>
+                    <p class="venue">ACA Seminar, 2024</p>
+                    <a href="https://docs.google.com/presentation/d/16frb0oNvWlHP835OL_59c280v4uHUotI/edit?usp=drive_link&ouid=114202023185536484164&rtpof=true&sd=true" class="btn btn-secondary" target="_blank">Slides</a>
+                </div>
+                <div class="talk-card">
+                    <h3>The place of Astrometry in SETI</h3>
+                    <p class="venue">Interstellar Frontiers: SETI, Astrobiology & SKA, 2024</p>
+                    <a href="https://docs.google.com/presentation/d/1LzTpW3TDAsMg_vZapnjtMzetCZsqF_tb/edit?usp=drive_link&ouid=114202023185536484164&rtpof=true&sd=true" class="btn btn-secondary" target="_blank">Slides</a>
+                </div>
+                <div class="talk-card">
+                    <h3>Star-spots, stellar dynamos and habitable exoplanet astrometry</h3>
+                    <p class="venue">Australian Exoplanet Workshop 9, 2023</p>
+                    <a href="https://docs.google.com/presentation/d/1VkNks956BYRCpYMPLSyvjEjprRVmC56C/edit?usp=drive_link&ouid=114202023185536484164&rtpof=true&sd=true" class="btn btn-secondary" target="_blank">Slides</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Posters -->
+        <section id="posters">
+            <h2>Posters</h2>
+            <div class="poster-grid">
+                <div class="poster-card">
+                    <img src="images/thumbs/CoolStars22-ConaireDeagan-Final.png" alt="Cool Stars 22 Poster" class="poster-thumb">
+                    <div class="poster-content">
+                        <h3>Towards Stellar Obliquities via High Precision Astrometry</h3>
+                        <p class="venue">Cool Stars 22, 2024</p>
+                        <a href="images/fulls/CoolStars22-ConaireDeagan-Final-UNSWPRINTJOB.pdf" class="btn btn-secondary">View</a>
+                    </div>
+                </div>
+                <div class="poster-card">
+                    <img src="images/thumbs/ESSV Conaire Deagan Poster - Final.png" alt="ESSV Poster" class="poster-thumb">
+                    <div class="poster-content">
+                        <h3>Recovering Stellar Inclination with High Precision Astrometry</h3>
+                        <p class="venue">Extreme Solar Systems V, 2024</p>
+                        <a href="images/fulls/ESSV Conaire Deagan Poster - Final.pdf" class="btn btn-secondary">View</a>
+                    </div>
+                </div>
+                <div class="poster-card">
+                    <img src="images/thumbs/ASA2023.png" alt="ASA 2023 Poster" class="poster-thumb">
+                    <div class="poster-content">
+                        <h3>Inferring stellar system properties via astrometric monitoring</h3>
+                        <p class="venue">ASA 2023</p>
+                        <a href="images/fulls/ConaireDeagan_ASA_2023_POSTER.pdf" class="btn btn-secondary">View</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Teaching -->
+        <section id="teaching">
+            <h2>Teaching</h2>
+            <div class="teaching-content">
+                <div class="teaching-highlight">
+                    <div class="stat">91.9%</div>
+                    <div class="label">Positive FFT<br>(30 responses)</div>
+                </div>
+                <div>
+                    <ul class="courses-list">
+                        <li>
+                            <span class="course-name">QBUS3600: Business Analytics in Practice</span>
+                            <span class="course-role">Head Tutor · USYD</span>
+                        </li>
+                        <li>
+                            <span class="course-name">QBUS6600: Data Analytics for Business Capstone</span>
+                            <span class="course-role">Tutor · USYD</span>
+                        </li>
+                        <li>
+                            <span class="course-name">BUSS6002: Data Science in Business</span>
+                            <span class="course-role">Tutor · USYD</span>
+                        </li>
+                        <li>
+                            <span class="course-name">PHYS4016: Bayesian Data Inference and ML</span>
+                            <span class="course-role">Marker · USYD</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Challenge -->
+        <section id="challenge">
+            <div class="challenge-section">
+                <h2>A Challenge</h2>
+                <p>Decode this message, and I'll buy you a coffee if we ever meet. No cryptography required—no tricks, no red herrings.</p>
+                <div class="challenge-buttons">
+                    <a href="https://drive.google.com/file/d/1vGNUS5o24Ky3PzWYD56i0bnSXNPGJ_kK/view?usp=sharing" class="btn btn-primary" target="_blank">
+                        Accept Challenge
+                    </a>
+                    <a href="https://forms.gle/dgFWc132VNZNmzV38" class="btn btn-secondary" target="_blank">
+                        Survey
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section id="contact">
+            <h2>Contact</h2>
+            <p>Happy to discuss research or potential collaborations. If you're one of my students, please use official channels via Canvas.</p>
+            <div class="contact-grid">
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <div>
+                        <a href="mailto:c.deagan@unsw.edu.au">c.deagan@unsw.edu.au</a>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <i class="ai ai-orcid"></i>
+                    <div>
+                        <a href="https://orcid.org/0009-0008-4420-5848" target="_blank">0009-0008-4420-5848</a>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div>
+                        <span>School of Physics<br>UNSW Sydney, NSW 2052</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <p>&copy; 2025 Conaire Deagan</p>
+        </footer>
+    </div>
+
+    <script>
+        // Theme toggle - default dark
+        function setTheme(theme) {
+            document.documentElement.setAttribute('data-theme', theme);
+            localStorage.setItem('theme', theme);
+            const icon = document.getElementById('theme-icon');
+            icon.className = theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+        }
+
+        function toggleTheme() {
+            const current = document.documentElement.getAttribute('data-theme') || 'dark';
+            setTheme(current === 'dark' ? 'light' : 'dark');
+        }
+
+        // Initialize theme (default dark)
+        const savedTheme = localStorage.getItem('theme') || 'dark';
+        setTheme(savedTheme);
+
+        // Profile image rotation
+        const profileImage = document.getElementById('profile-image');
+        const images = ['images/profile4.jpg', 'images/profile3.jpg', 'images/profile2.jpg'];
+        let currentImageIndex = 0;
+
+        function changeImage() {
+            currentImageIndex = (currentImageIndex + 1) % images.length;
+            profileImage.style.opacity = 0;
+            setTimeout(() => {
+                profileImage.src = images[currentImageIndex];
+                profileImage.style.opacity = 1;
+            }, 300);
+        }
+
+        setInterval(changeImage, 5000);
+
+        // Parallax effect on sidebar
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('header');
+            if (window.innerWidth > 1024) {
+                const scrolled = window.pageYOffset;
+                header.style.backgroundPositionY = (scrolled * 0.3) + 'px';
+            }
+        });
+    </script>
+</body>
 </html>
