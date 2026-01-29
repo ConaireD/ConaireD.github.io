@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
     
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-LBB6NP4BPD"></script>
@@ -20,20 +21,19 @@
     
     <style>
         :root {
-            /* Mid-century palette */
+            /* Mid-century palette - Dark */
             --bg: #1c1b18;
             --bg-alt: #232220;
             --bg-card: #2a2926;
             --cream: #f4f1e8;
-            --cream-muted: #d4d0c4;
+            --cream-muted: #b8b4a8;
             --teal: #4a7c7c;
             --teal-light: #5a9494;
             --ochre: #c9a227;
             --orange: #c4673d;
             --orange-light: #d4795a;
-            --charcoal: #3a3835;
             --rule: #4a4740;
-            --rule-light: #5a5750;
+            --rule-strong: #5a5750;
         }
 
         [data-theme="light"] {
@@ -41,15 +41,14 @@
             --bg-alt: #ebe7db;
             --bg-card: #ffffff;
             --cream: #1c1b18;
-            --cream-muted: #4a4740;
+            --cream-muted: #5a5750;
             --teal: #3a6a6a;
             --teal-light: #4a7c7c;
             --ochre: #a88a20;
             --orange: #b45a30;
             --orange-light: #c4673d;
-            --charcoal: #e8e4d8;
             --rule: #d0ccc0;
-            --rule-light: #c0bbb0;
+            --rule-strong: #b8b4a8;
         }
 
         * {
@@ -66,165 +65,50 @@
             font-family: 'Space Grotesk', -apple-system, sans-serif;
             background: var(--bg);
             color: var(--cream);
-            line-height: 1.6;
+            line-height: 1.65;
             font-size: 16px;
             transition: background 0.3s, color 0.3s;
         }
 
-        /* ===== GEOMETRIC DECORATIONS ===== */
-        .geo-circle {
-            position: absolute;
-            border: 1px solid var(--rule);
-            border-radius: 50%;
-            pointer-events: none;
-        }
-
-        .geo-arc {
-            position: absolute;
-            border: 1px solid var(--rule);
-            border-radius: 50%;
-            pointer-events: none;
-        }
-
-        .geo-line {
-            position: absolute;
-            background: var(--rule);
-            pointer-events: none;
-        }
-
-        /* ===== HEADER / HERO ===== */
-        header {
-            min-height: 100vh;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .header-left {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            padding: 4rem;
-            position: relative;
-            border-right: 1px solid var(--rule);
-        }
-
-        .header-left::before {
-            content: '';
-            position: absolute;
-            top: 15%;
-            right: -150px;
-            width: 300px;
-            height: 300px;
-            border: 1px solid var(--rule);
-            border-radius: 50%;
-        }
-
-        .header-left::after {
-            content: '';
-            position: absolute;
-            bottom: 20%;
-            left: -80px;
-            width: 160px;
-            height: 160px;
-            border: 1px solid var(--teal);
-            border-radius: 50%;
-            opacity: 0.5;
-        }
-
-        .name-block {
-            position: relative;
-            z-index: 1;
-        }
-
-        .name-block h1 {
-            font-family: 'Source Serif 4', Georgia, serif;
-            font-size: clamp(2.5rem, 5vw, 4rem);
-            font-weight: 600;
-            letter-spacing: -0.02em;
-            line-height: 1.1;
-            margin-bottom: 1rem;
-        }
-
-        .name-block h1 span {
-            display: block;
-        }
-
-        .name-block h1 .first {
-            color: var(--cream);
-        }
-
-        .name-block h1 .last {
-            color: var(--orange);
-        }
-
-        .title-line {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            margin-bottom: 2rem;
-        }
-
-        .title-line::before {
-            content: '';
-            width: 40px;
-            height: 1px;
-            background: var(--ochre);
-        }
-
-        .title-line span {
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 0.15em;
-            color: var(--cream-muted);
-        }
-
-        .header-right {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            padding: 4rem;
-            position: relative;
-        }
-
-        .header-right::before {
-            content: '';
-            position: absolute;
+        /* ===== SIDEBAR ===== */
+        #sidebar {
+            position: fixed;
             top: 0;
-            right: 0;
-            width: 50%;
-            height: 100%;
-            background: var(--bg-alt);
-            z-index: 0;
-        }
-
-        .nav-minimal {
+            left: 0;
+            bottom: 0;
+            width: 320px;
+            background: linear-gradient(135deg, rgba(28, 27, 24, 0.88), rgba(28, 27, 24, 0.75)),
+                        url('images/Jupiter.jpg') center center;
+            background-size: cover;
+            background-attachment: scroll;
             display: flex;
-            gap: 2rem;
-            position: relative;
-            z-index: 1;
+            flex-direction: column;
+            align-items: flex-end;
+            justify-content: space-between;
+            padding: 3rem 2.5rem;
+            text-align: right;
+            z-index: 100;
+            border-right: 2px solid var(--rule);
         }
 
-        .nav-minimal a {
-            color: var(--cream-muted);
-            text-decoration: none;
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            transition: color 0.2s;
+        [data-theme="light"] #sidebar {
+            background: linear-gradient(135deg, rgba(244, 241, 232, 0.85), rgba(244, 241, 232, 0.7)),
+                        url('images/Jupiter.jpg') center center;
+            background-size: cover;
         }
 
-        .nav-minimal a:hover {
-            color: var(--ochre);
+        .sidebar-top {
+            width: 100%;
+            display: flex;
+            justify-content: flex-end;
         }
 
         .theme-toggle {
-            background: none;
-            border: 1px solid var(--rule);
-            color: var(--cream-muted);
-            padding: 0.5rem 1rem;
-            font-size: 0.75rem;
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            color: rgba(255, 255, 255, 0.7);
+            padding: 0.4rem 0.8rem;
+            font-size: 0.7rem;
             text-transform: uppercase;
             letter-spacing: 0.1em;
             cursor: pointer;
@@ -237,51 +121,225 @@
             color: var(--ochre);
         }
 
-        .bio-block {
-            position: relative;
-            z-index: 1;
-            max-width: 400px;
+        [data-theme="light"] .theme-toggle {
+            background: rgba(0, 0, 0, 0.05);
+            border-color: rgba(0, 0, 0, 0.2);
+            color: rgba(0, 0, 0, 0.6);
         }
 
-        .bio-block p {
+        .sidebar-middle {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            width: 100%;
+        }
+
+        .profile-container {
+            width: 130px;
+            height: 130px;
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+
+        .profile-container::before {
+            content: '';
+            position: absolute;
+            top: -8px;
+            left: -8px;
+            right: -8px;
+            bottom: -8px;
+            border: 2px solid var(--ochre);
+            border-radius: 50%;
+            opacity: 0.4;
+        }
+
+        .profile-image {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            transition: opacity 0.3s ease;
+        }
+
+        .sidebar-name {
+            font-family: 'Source Serif 4', Georgia, serif;
+            font-size: 1.6rem;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 0.25rem;
+            letter-spacing: -0.01em;
+        }
+
+        [data-theme="light"] .sidebar-name {
+            color: var(--cream);
+        }
+
+        .sidebar-title {
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.6);
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            margin-bottom: 0.25rem;
+        }
+
+        [data-theme="light"] .sidebar-title {
             color: var(--cream-muted);
-            font-size: 1rem;
-            line-height: 1.7;
+        }
+
+        .sidebar-affiliation {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        [data-theme="light"] .sidebar-affiliation {
+            color: var(--cream-muted);
+        }
+
+        .sidebar-nav {
+            margin-top: 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+            align-items: flex-end;
+        }
+
+        .sidebar-nav a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            transition: color 0.2s;
+            position: relative;
+        }
+
+        .sidebar-nav a::before {
+            content: '';
+            position: absolute;
+            right: calc(100% + 0.75rem);
+            top: 50%;
+            width: 0;
+            height: 2px;
+            background: var(--ochre);
+            transition: width 0.2s;
+        }
+
+        .sidebar-nav a:hover {
+            color: #fff;
+        }
+
+        .sidebar-nav a:hover::before {
+            width: 20px;
+        }
+
+        [data-theme="light"] .sidebar-nav a {
+            color: var(--cream-muted);
+        }
+
+        [data-theme="light"] .sidebar-nav a:hover {
+            color: var(--cream);
+        }
+
+        .sidebar-social {
+            display: flex;
+            gap: 0.75rem;
+            justify-content: flex-end;
+        }
+
+        .sidebar-social a {
+            width: 36px;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.95rem;
+            transition: all 0.2s;
+            text-decoration: none;
+        }
+
+        .sidebar-social a:hover {
+            border-color: var(--ochre);
+            color: var(--ochre);
+            transform: translateY(-2px);
+        }
+
+        [data-theme="light"] .sidebar-social a {
+            border-color: rgba(0, 0, 0, 0.2);
+            color: var(--cream-muted);
+        }
+
+        [data-theme="light"] .sidebar-social a:hover {
+            border-color: var(--ochre);
+            color: var(--ochre);
+        }
+
+        /* ===== MAIN CONTENT ===== */
+        #main {
+            margin-left: 320px;
+            padding: 4rem 4rem 4rem 5rem;
+            max-width: 900px;
+        }
+
+        section {
+            margin-bottom: 5rem;
+            position: relative;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: baseline;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--rule);
+        }
+
+        .section-number {
+            font-size: 0.7rem;
+            color: var(--ochre);
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            font-weight: 600;
+        }
+
+        .section-header h2 {
+            font-family: 'Source Serif 4', Georgia, serif;
+            font-size: 1.75rem;
+            font-weight: 600;
+            color: var(--cream);
+            letter-spacing: -0.01em;
+        }
+
+        /* ===== INTRO ===== */
+        .intro-content {
+            max-width: 600px;
+        }
+
+        .intro-content p {
+            font-size: 1.05rem;
+            color: var(--cream-muted);
+            line-height: 1.75;
             text-align: justify;
             margin-bottom: 2rem;
         }
 
-        .bio-block a {
+        .intro-content a {
             color: var(--teal-light);
             text-decoration: none;
             border-bottom: 1px solid transparent;
             transition: border-color 0.2s;
         }
 
-        .bio-block a:hover {
+        .intro-content a:hover {
             border-color: var(--teal-light);
-        }
-
-        .social-row {
-            display: flex;
-            gap: 1.5rem;
-            position: relative;
-            z-index: 1;
-        }
-
-        .social-row a {
-            color: var(--cream-muted);
-            font-size: 1.1rem;
-            transition: color 0.2s;
-        }
-
-        .social-row a:hover {
-            color: var(--ochre);
         }
 
         .cta-row {
             display: flex;
-            gap: 1rem;
+            gap: 0.75rem;
             flex-wrap: wrap;
         }
 
@@ -289,19 +347,20 @@
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
-            padding: 0.75rem 1.5rem;
+            padding: 0.7rem 1.25rem;
             font-size: 0.8rem;
             text-transform: uppercase;
             letter-spacing: 0.08em;
             text-decoration: none;
             transition: all 0.2s;
             font-family: inherit;
+            font-weight: 500;
         }
 
         .btn-primary {
             background: var(--orange);
-            color: var(--bg);
-            border: 1px solid var(--orange);
+            color: #fff;
+            border: 2px solid var(--orange);
         }
 
         .btn-primary:hover {
@@ -312,74 +371,25 @@
         .btn-outline {
             background: transparent;
             color: var(--cream);
-            border: 1px solid var(--rule);
+            border: 2px solid var(--rule-strong);
         }
 
         .btn-outline:hover {
             border-color: var(--cream-muted);
         }
 
-        /* ===== MAIN CONTENT ===== */
-        main {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 4rem;
-        }
-
-        section {
-            padding: 6rem 0;
-            border-top: 1px solid var(--rule);
-            position: relative;
-        }
-
-        .section-header {
-            display: grid;
-            grid-template-columns: 200px 1fr;
-            gap: 4rem;
-            margin-bottom: 3rem;
-        }
-
-        .section-label {
-            position: relative;
-        }
-
-        .section-label h2 {
-            font-family: 'Source Serif 4', Georgia, serif;
-            font-size: 1.5rem;
-            font-weight: 600;
-            color: var(--cream);
-        }
-
-        .section-label .number {
-            font-size: 0.7rem;
-            color: var(--ochre);
-            text-transform: uppercase;
-            letter-spacing: 0.15em;
-            display: block;
-            margin-bottom: 0.5rem;
-        }
-
-        .section-label::after {
-            content: '';
-            position: absolute;
-            bottom: -1rem;
-            left: 0;
-            width: 30px;
-            height: 1px;
-            background: var(--ochre);
-        }
-
-        /* ===== RESEARCH GRID ===== */
+        /* ===== RESEARCH ===== */
         .research-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1px;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2px;
             background: var(--rule);
+            border: 2px solid var(--rule);
         }
 
         .research-item {
             background: var(--bg);
-            padding: 2rem;
+            padding: 1.75rem;
             position: relative;
             transition: background 0.3s;
         }
@@ -388,43 +398,25 @@
             background: var(--bg-alt);
         }
 
-        .research-item::before {
-            content: '';
-            position: absolute;
-            top: 2rem;
-            right: 2rem;
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-            background: var(--teal);
-            opacity: 0;
-            transition: opacity 0.3s;
+        .research-item.primary .research-tag {
+            display: inline-block;
         }
 
-        .research-item:hover::before {
-            opacity: 1;
-        }
-
-        .research-item.primary::after {
-            content: 'Primary';
-            position: absolute;
-            top: 2rem;
-            right: 2rem;
-            font-size: 0.65rem;
+        .research-tag {
+            display: none;
+            font-size: 0.6rem;
             text-transform: uppercase;
             letter-spacing: 0.1em;
             color: var(--ochre);
-        }
-
-        .research-item.primary::before {
-            display: none;
+            margin-bottom: 0.75rem;
+            font-weight: 600;
         }
 
         .research-item h3 {
             font-family: 'Source Serif 4', Georgia, serif;
-            font-size: 1.15rem;
+            font-size: 1.1rem;
             font-weight: 500;
-            margin-bottom: 0.75rem;
+            margin-bottom: 0.6rem;
             color: var(--cream);
         }
 
@@ -437,46 +429,52 @@
 
         /* ===== PUBLICATIONS ===== */
         .publication-list {
-            display: flex;
-            flex-direction: column;
+            border: 2px solid var(--rule);
         }
 
         .publication-item {
-            display: grid;
-            grid-template-columns: 1fr auto;
-            gap: 2rem;
-            padding: 1.5rem 0;
-            border-bottom: 1px solid var(--rule);
+            display: flex;
+            justify-content: space-between;
             align-items: center;
+            gap: 1.5rem;
+            padding: 1.25rem 1.5rem;
+            border-bottom: 2px solid var(--rule);
+            flex-wrap: wrap;
+            transition: background 0.3s;
         }
 
         .publication-item:last-child {
             border-bottom: none;
         }
 
+        .publication-item:hover {
+            background: var(--bg-alt);
+        }
+
         .publication-info h3 {
             font-family: 'Space Grotesk', sans-serif;
-            font-size: 1rem;
+            font-size: 0.95rem;
             font-weight: 500;
-            margin-bottom: 0.25rem;
+            margin-bottom: 0.2rem;
             color: var(--cream);
         }
 
         .publication-info p {
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             color: var(--cream-muted);
         }
 
         .publication-status {
             font-size: 0.7rem;
             text-transform: uppercase;
-            letter-spacing: 0.1em;
-            padding: 0.5rem 1rem;
-            border: 1px solid var(--rule);
+            letter-spacing: 0.08em;
+            padding: 0.4rem 0.9rem;
+            border: 2px solid var(--rule);
             color: var(--cream-muted);
             text-decoration: none;
             transition: all 0.2s;
             white-space: nowrap;
+            font-weight: 500;
         }
 
         .publication-status:hover {
@@ -495,20 +493,28 @@
         }
 
         /* ===== TALKS ===== */
+        .section-note {
+            font-size: 0.85rem;
+            font-style: italic;
+            color: var(--cream-muted);
+            margin-bottom: 1.5rem;
+        }
+
         .talks-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 1px;
+            gap: 2px;
             background: var(--rule);
+            border: 2px solid var(--rule);
         }
 
         .talk-item {
             background: var(--bg);
-            padding: 2rem;
+            padding: 1.5rem;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            min-height: 180px;
+            min-height: 160px;
             transition: background 0.3s;
         }
 
@@ -518,28 +524,26 @@
 
         .talk-item h3 {
             font-family: 'Source Serif 4', Georgia, serif;
-            font-size: 1.05rem;
+            font-size: 1rem;
             font-weight: 500;
             line-height: 1.4;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.4rem;
             color: var(--cream);
         }
 
         .talk-item .venue {
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             color: var(--cream-muted);
             margin-bottom: 1rem;
         }
 
         .talk-item .link {
-            font-size: 0.75rem;
+            font-size: 0.7rem;
             text-transform: uppercase;
             letter-spacing: 0.1em;
             color: var(--teal-light);
             text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
+            font-weight: 500;
             transition: color 0.2s;
         }
 
@@ -547,15 +551,11 @@
             color: var(--ochre);
         }
 
-        .talk-item .link::after {
-            content: '→';
-        }
-
         /* ===== POSTERS ===== */
         .poster-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
+            gap: 1.5rem;
         }
 
         .poster-item {
@@ -567,7 +567,7 @@
             aspect-ratio: 3/4;
             object-fit: cover;
             object-position: top;
-            border: 1px solid var(--rule);
+            border: 2px solid var(--rule);
             transition: border-color 0.3s;
         }
 
@@ -581,7 +581,7 @@
 
         .poster-info h3 {
             font-family: 'Space Grotesk', sans-serif;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             font-weight: 500;
             line-height: 1.4;
             margin-bottom: 0.25rem;
@@ -589,17 +589,18 @@
         }
 
         .poster-info .venue {
-            font-size: 0.75rem;
+            font-size: 0.7rem;
             color: var(--cream-muted);
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.4rem;
         }
 
         .poster-info .link {
-            font-size: 0.7rem;
+            font-size: 0.65rem;
             text-transform: uppercase;
             letter-spacing: 0.1em;
             color: var(--teal-light);
             text-decoration: none;
+            font-weight: 500;
         }
 
         .poster-info .link:hover {
@@ -609,38 +610,39 @@
         /* ===== TEACHING ===== */
         .teaching-layout {
             display: grid;
-            grid-template-columns: 200px 1fr;
-            gap: 4rem;
+            grid-template-columns: 160px 1fr;
+            gap: 2.5rem;
+            align-items: start;
         }
 
         .teaching-stat {
             text-align: center;
-            padding: 2rem;
-            border: 1px solid var(--rule);
+            padding: 1.75rem;
+            border: 2px solid var(--rule);
             position: relative;
         }
 
         .teaching-stat::before {
             content: '';
             position: absolute;
-            top: -1px;
+            top: -2px;
             left: 50%;
             transform: translateX(-50%);
             width: 40px;
-            height: 3px;
+            height: 4px;
             background: var(--ochre);
         }
 
         .teaching-stat .number {
             font-family: 'Source Serif 4', Georgia, serif;
-            font-size: 2.5rem;
+            font-size: 2.25rem;
             font-weight: 600;
             color: var(--orange);
             line-height: 1;
         }
 
         .teaching-stat .label {
-            font-size: 0.75rem;
+            font-size: 0.7rem;
             text-transform: uppercase;
             letter-spacing: 0.1em;
             color: var(--cream-muted);
@@ -649,14 +651,15 @@
 
         .courses-list {
             list-style: none;
+            border: 2px solid var(--rule);
         }
 
         .courses-list li {
             display: flex;
             justify-content: space-between;
             align-items: baseline;
-            padding: 1rem 0;
-            border-bottom: 1px solid var(--rule);
+            padding: 1rem 1.25rem;
+            border-bottom: 2px solid var(--rule);
             gap: 1rem;
             flex-wrap: wrap;
         }
@@ -666,43 +669,43 @@
         }
 
         .course-name {
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             color: var(--cream);
         }
 
         .course-role {
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             color: var(--cream-muted);
         }
 
         /* ===== CHALLENGE ===== */
         .challenge-block {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            border: 1px solid var(--rule);
+            grid-template-columns: 1fr auto;
+            border: 2px solid var(--rule);
             position: relative;
         }
 
         .challenge-block::before {
             content: '';
             position: absolute;
-            top: -1px;
-            left: 2rem;
-            width: 60px;
-            height: 3px;
+            top: -2px;
+            left: 1.5rem;
+            width: 50px;
+            height: 4px;
             background: var(--ochre);
         }
 
         .challenge-text {
-            padding: 3rem;
-            border-right: 1px solid var(--rule);
+            padding: 2rem;
+            border-right: 2px solid var(--rule);
         }
 
         .challenge-text h3 {
             font-family: 'Source Serif 4', Georgia, serif;
-            font-size: 1.25rem;
+            font-size: 1.15rem;
             font-weight: 600;
-            margin-bottom: 1rem;
+            margin-bottom: 0.75rem;
             color: var(--cream);
         }
 
@@ -714,38 +717,41 @@
         }
 
         .challenge-action {
-            padding: 3rem;
+            padding: 2rem;
             display: flex;
             flex-direction: column;
             justify-content: center;
-            gap: 1rem;
+            gap: 0.75rem;
+            min-width: 140px;
         }
 
         /* ===== CONTACT ===== */
         .contact-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 1px;
+            gap: 2px;
             background: var(--rule);
+            border: 2px solid var(--rule);
         }
 
         .contact-item {
             background: var(--bg);
-            padding: 2rem;
+            padding: 1.5rem;
         }
 
         .contact-item .label {
-            font-size: 0.7rem;
+            font-size: 0.65rem;
             text-transform: uppercase;
             letter-spacing: 0.15em;
             color: var(--ochre);
             margin-bottom: 0.5rem;
+            font-weight: 600;
         }
 
         .contact-item a {
             color: var(--cream);
             text-decoration: none;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             transition: color 0.2s;
         }
 
@@ -755,19 +761,18 @@
 
         .contact-item span {
             color: var(--cream-muted);
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             line-height: 1.5;
         }
 
         /* ===== FOOTER ===== */
         footer {
-            padding: 3rem 4rem;
-            border-top: 1px solid var(--rule);
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 2px solid var(--rule);
             display: flex;
             justify-content: space-between;
             align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
         }
 
         footer p {
@@ -777,7 +782,7 @@
 
         .footer-social {
             display: flex;
-            gap: 1.5rem;
+            gap: 1rem;
         }
 
         .footer-social a {
@@ -790,42 +795,47 @@
             color: var(--ochre);
         }
 
-        /* ===== NOTE ===== */
-        .section-note {
-            font-size: 0.8rem;
-            font-style: italic;
-            color: var(--cream-muted);
-            margin-bottom: 2rem;
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 1200px) {
+            #main {
+                padding: 3rem 3rem 3rem 4rem;
+            }
         }
 
-        /* ===== RESPONSIVE ===== */
         @media (max-width: 1024px) {
-            header {
-                grid-template-columns: 1fr;
-                min-height: auto;
-            }
-
-            .header-left {
+            #sidebar {
+                position: relative;
+                width: 100%;
+                padding: 2.5rem 2rem;
+                text-align: center;
+                align-items: center;
                 border-right: none;
-                border-bottom: 1px solid var(--rule);
-                padding: 3rem 2rem;
+                border-bottom: 2px solid var(--rule);
             }
 
-            .header-right {
-                padding: 3rem 2rem;
+            .sidebar-middle {
+                align-items: center;
             }
 
-            .header-right::before {
+            .sidebar-nav {
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .sidebar-nav a::before {
                 display: none;
             }
 
-            main {
-                padding: 0 2rem;
+            .sidebar-social {
+                justify-content: center;
             }
 
-            .section-header {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
+            #main {
+                margin-left: 0;
+                padding: 3rem 2rem;
+                max-width: none;
             }
 
             .research-grid {
@@ -842,11 +852,16 @@
 
             .teaching-layout {
                 grid-template-columns: 1fr;
-                gap: 2rem;
+                gap: 1.5rem;
             }
 
             .teaching-stat {
-                max-width: 200px;
+                max-width: 160px;
+                margin: 0 auto;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
             }
 
             .challenge-block {
@@ -855,125 +870,124 @@
 
             .challenge-text {
                 border-right: none;
-                border-bottom: 1px solid var(--rule);
-            }
-
-            .contact-grid {
-                grid-template-columns: 1fr;
-            }
-
-            footer {
-                flex-direction: column;
-                gap: 1.5rem;
-                text-align: center;
-                padding: 2rem;
+                border-bottom: 2px solid var(--rule);
             }
         }
 
         @media (max-width: 600px) {
-            .header-left {
+            #sidebar {
                 padding: 2rem 1.5rem;
             }
 
-            .header-right {
-                padding: 2rem 1.5rem;
+            .profile-container {
+                width: 100px;
+                height: 100px;
             }
 
-            .name-block h1 {
-                font-size: 2rem;
+            .sidebar-name {
+                font-size: 1.4rem;
             }
 
-            .nav-minimal {
-                flex-wrap: wrap;
-                gap: 1rem;
+            #main {
+                padding: 2rem 1.25rem;
             }
 
-            main {
-                padding: 0 1.5rem;
-            }
-
-            section {
-                padding: 4rem 0;
+            .section-header h2 {
+                font-size: 1.4rem;
             }
 
             .poster-grid {
                 grid-template-columns: 1fr;
             }
 
-            .cta-row {
+            .publication-item {
                 flex-direction: column;
+                align-items: flex-start;
             }
 
-            .btn {
-                justify-content: center;
+            footer {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
             }
         }
     </style>
 </head>
 <body>
-    <header>
-        <div class="header-left">
-            <div class="name-block">
-                <h1>
-                    <span class="first">Conaire</span>
-                    <span class="last">Deagan</span>
-                </h1>
-                <div class="title-line">
-                    <span>Astrophysics · UNSW Sydney</span>
-                </div>
-                <div class="cta-row">
-                    <a href="mailto:c.deagan@unsw.edu.au" class="btn btn-primary">Contact</a>
-                    <a href="assets/ConaireDeagan_AcademicResume_Sep2024.pdf" class="btn btn-outline">CV</a>
-                    <a href="https://github.com/ConaireD/UNSW_Astro_Stats_Club" class="btn btn-outline">AstroStats</a>
-                </div>
-            </div>
+    <!-- Sidebar -->
+    <aside id="sidebar">
+        <div class="sidebar-top">
+            <button class="theme-toggle" onclick="toggleTheme()">
+                <span id="theme-label">Light</span>
+            </button>
         </div>
         
-        <div class="header-right">
-            <div style="display: flex; justify-content: space-between; align-items: center;">
-                <nav class="nav-minimal">
-                    <a href="#research">Research</a>
-                    <a href="#publications">Publications</a>
-                    <a href="#talks">Talks</a>
-                    <a href="#teaching">Teaching</a>
-                </nav>
-                <button class="theme-toggle" onclick="toggleTheme()">
-                    <span id="theme-label">Light</span>
-                </button>
+        <div class="sidebar-middle">
+            <div class="profile-container">
+                <img src="images/profile4.jpg" alt="Conaire Deagan" class="profile-image" id="profile-image">
             </div>
+            <div class="sidebar-name">Conaire Deagan</div>
+            <div class="sidebar-title">PhD Candidate</div>
+            <div class="sidebar-affiliation">UNSW Sydney</div>
             
-            <div class="bio-block">
-                <p>
-                    I develop methods to map the surfaces of stars we cannot resolve, using high-precision astrometry to recover information invisible to photometry alone. Member of <a href="https://newts.space/">NEWTS</a> and science team on <a href="https://toliman.space/">TOLIMAN</a>.
-                </p>
-            </div>
-            
-            <div class="social-row">
-                <a href="https://orcid.org/0009-0008-4420-5848" target="_blank" title="ORCID"><i class="ai ai-orcid"></i></a>
-                <a href="https://bsky.app/profile/did:plc:4s7mco7btvhtu2iqoqcnf6vp" target="_blank" title="Bluesky">○</a>
-                <a href="https://github.com/ConaireD" target="_blank" title="GitHub">◐</a>
-                <a href="https://www.linkedin.com/in/conaire-deagan-7a6569159" target="_blank" title="LinkedIn">▢</a>
-                <a href="mailto:c.deagan@unsw.edu.au" title="Email">✉</a>
-            </div>
+            <nav class="sidebar-nav">
+                <a href="#research">Research</a>
+                <a href="#publications">Publications</a>
+                <a href="#talks">Talks</a>
+                <a href="#teaching">Teaching</a>
+                <a href="#contact">Contact</a>
+            </nav>
         </div>
-    </header>
+        
+        <div class="sidebar-social">
+            <a href="https://orcid.org/0009-0008-4420-5848" target="_blank" title="ORCID"><i class="ai ai-orcid"></i></a>
+            <a href="https://bsky.app/profile/did:plc:4s7mco7btvhtu2iqoqcnf6vp" target="_blank" title="Bluesky"><i class="fab fa-bluesky"></i></a>
+            <a href="https://github.com/ConaireD" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/conaire-deagan-7a6569159" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="mailto:c.deagan@unsw.edu.au" title="Email"><i class="fas fa-envelope"></i></a>
+        </div>
+    </aside>
 
-    <main>
+    <!-- Main Content -->
+    <main id="main">
+        <!-- Intro -->
+        <section id="intro">
+            <div class="section-header">
+                <span class="section-number">01</span>
+                <h2>About</h2>
+            </div>
+            <div class="intro-content">
+                <p>
+                    I develop methods to map the surfaces of stars we cannot resolve, using high-precision astrometry to recover information invisible to photometry alone. Member of the <a href="https://newts.space/">NEWTS research group</a> and science team on the <a href="https://toliman.space/">TOLIMAN</a> mission. Always open to collaboration.
+                </p>
+                <div class="cta-row">
+                    <a href="mailto:c.deagan@unsw.edu.au" class="btn btn-primary">
+                        <i class="fas fa-envelope"></i> Contact
+                    </a>
+                    <a href="assets/ConaireDeagan_AcademicResume_Sep2024.pdf" class="btn btn-outline">
+                        <i class="fas fa-file-alt"></i> CV
+                    </a>
+                    <a href="https://github.com/ConaireD/UNSW_Astro_Stats_Club" class="btn btn-outline">
+                        <i class="fas fa-chart-bar"></i> AstroStats
+                    </a>
+                </div>
+            </div>
+        </section>
+
         <!-- Research -->
         <section id="research">
             <div class="section-header">
-                <div class="section-label">
-                    <span class="number">01</span>
-                    <h2>Research</h2>
-                </div>
+                <span class="section-number">02</span>
+                <h2>Research</h2>
             </div>
-            
             <div class="research-grid">
                 <div class="research-item primary">
+                    <span class="research-tag">Primary</span>
                     <h3>Stellar Surface Mapping</h3>
                     <p>Extending frameworks for stellar surface reconstruction using spherical harmonics. Astrometry accesses modes invisible to photometry—particularly odd-ℓ modes encoding hemispheric asymmetries.</p>
                 </div>
                 <div class="research-item primary">
+                    <span class="research-tag">Primary</span>
                     <h3>Astrometric Jitter</h3>
                     <p>Reframing "astrometric jitter" as a signal encoding stellar surface structure rather than noise. Quantifying stellar activity limits for missions like TOLIMAN.</p>
                 </div>
@@ -999,12 +1013,9 @@
         <!-- Publications -->
         <section id="publications">
             <div class="section-header">
-                <div class="section-label">
-                    <span class="number">02</span>
-                    <h2>Publications</h2>
-                </div>
+                <span class="section-number">03</span>
+                <h2>Publications</h2>
             </div>
-            
             <div class="publication-list">
                 <div class="publication-item">
                     <div class="publication-info">
@@ -1026,42 +1037,38 @@
         <!-- Talks -->
         <section id="talks">
             <div class="section-header">
-                <div class="section-label">
-                    <span class="number">03</span>
-                    <h2>Talks</h2>
-                </div>
+                <span class="section-number">04</span>
+                <h2>Talks</h2>
             </div>
-            
             <p class="section-note">Unless published elsewhere, please treat figures and results as unpublished work.</p>
-            
             <div class="talks-grid">
                 <div class="talk-item">
                     <div>
                         <h3>The surface of unresolved Sun-like stars</h3>
                         <p class="venue">Stars in Brisbane / AEW10, 2024</p>
                     </div>
-                    <a href="https://docs.google.com/presentation/d/1LBe1dyxRpLjH5zy_NYsbD7xu9TwFswhs/edit?usp=sharing" class="link" target="_blank">View slides</a>
+                    <a href="https://docs.google.com/presentation/d/1LBe1dyxRpLjH5zy_NYsbD7xu9TwFswhs/edit" class="link" target="_blank">View slides →</a>
                 </div>
                 <div class="talk-item">
                     <div>
                         <h3>Star-Planet Interactions: Tracking star-spots for planetary insights</h3>
                         <p class="venue">ACA Seminar, 2024</p>
                     </div>
-                    <a href="https://docs.google.com/presentation/d/16frb0oNvWlHP835OL_59c280v4uHUotI/edit" class="link" target="_blank">View slides</a>
+                    <a href="https://docs.google.com/presentation/d/16frb0oNvWlHP835OL_59c280v4uHUotI/edit" class="link" target="_blank">View slides →</a>
                 </div>
                 <div class="talk-item">
                     <div>
                         <h3>The place of Astrometry in SETI</h3>
                         <p class="venue">Interstellar Frontiers, 2024</p>
                     </div>
-                    <a href="https://docs.google.com/presentation/d/1LzTpW3TDAsMg_vZapnjtMzetCZsqF_tb/edit" class="link" target="_blank">View slides</a>
+                    <a href="https://docs.google.com/presentation/d/1LzTpW3TDAsMg_vZapnjtMzetCZsqF_tb/edit" class="link" target="_blank">View slides →</a>
                 </div>
                 <div class="talk-item">
                     <div>
                         <h3>Star-spots, stellar dynamos and habitable exoplanet astrometry</h3>
                         <p class="venue">Australian Exoplanet Workshop 9, 2023</p>
                     </div>
-                    <a href="https://docs.google.com/presentation/d/1VkNks956BYRCpYMPLSyvjEjprRVmC56C/edit" class="link" target="_blank">View slides</a>
+                    <a href="https://docs.google.com/presentation/d/1VkNks956BYRCpYMPLSyvjEjprRVmC56C/edit" class="link" target="_blank">View slides →</a>
                 </div>
             </div>
         </section>
@@ -1069,12 +1076,9 @@
         <!-- Posters -->
         <section id="posters">
             <div class="section-header">
-                <div class="section-label">
-                    <span class="number">04</span>
-                    <h2>Posters</h2>
-                </div>
+                <span class="section-number">05</span>
+                <h2>Posters</h2>
             </div>
-            
             <div class="poster-grid">
                 <div class="poster-item">
                     <img src="images/thumbs/CoolStars22-ConaireDeagan-Final.png" alt="Cool Stars 22 Poster" class="poster-thumb">
@@ -1106,12 +1110,9 @@
         <!-- Teaching -->
         <section id="teaching">
             <div class="section-header">
-                <div class="section-label">
-                    <span class="number">05</span>
-                    <h2>Teaching</h2>
-                </div>
+                <span class="section-number">06</span>
+                <h2>Teaching</h2>
             </div>
-            
             <div class="teaching-layout">
                 <div class="teaching-stat">
                     <div class="number">91.9%</div>
@@ -1141,19 +1142,16 @@
         <!-- Challenge -->
         <section id="challenge">
             <div class="section-header">
-                <div class="section-label">
-                    <span class="number">06</span>
-                    <h2>Challenge</h2>
-                </div>
+                <span class="section-number">07</span>
+                <h2>Challenge</h2>
             </div>
-            
             <div class="challenge-block">
                 <div class="challenge-text">
                     <h3>Decode the message</h3>
                     <p>If you can work out what it says, I'll buy you a coffee when we meet. No cryptography required—no tricks, no red herrings.</p>
                 </div>
                 <div class="challenge-action">
-                    <a href="https://drive.google.com/file/d/1vGNUS5o24Ky3PzWYD56i0bnSXNPGJ_kK/view?usp=sharing" class="btn btn-primary" target="_blank">Accept</a>
+                    <a href="https://drive.google.com/file/d/1vGNUS5o24Ky3PzWYD56i0bnSXNPGJ_kK/view" class="btn btn-primary" target="_blank">Accept</a>
                     <a href="https://forms.gle/dgFWc132VNZNmzV38" class="btn btn-outline" target="_blank">Survey</a>
                 </div>
             </div>
@@ -1162,12 +1160,9 @@
         <!-- Contact -->
         <section id="contact">
             <div class="section-header">
-                <div class="section-label">
-                    <span class="number">07</span>
-                    <h2>Contact</h2>
-                </div>
+                <span class="section-number">08</span>
+                <h2>Contact</h2>
             </div>
-            
             <div class="contact-grid">
                 <div class="contact-item">
                     <div class="label">Email</div>
@@ -1183,19 +1178,21 @@
                 </div>
             </div>
         </section>
+
+        <!-- Footer -->
+        <footer>
+            <p>© 2025 Conaire Deagan</p>
+            <div class="footer-social">
+                <a href="https://orcid.org/0009-0008-4420-5848" target="_blank"><i class="ai ai-orcid"></i></a>
+                <a href="https://bsky.app/profile/did:plc:4s7mco7btvhtu2iqoqcnf6vp" target="_blank"><i class="fab fa-bluesky"></i></a>
+                <a href="https://github.com/ConaireD" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/conaire-deagan-7a6569159" target="_blank"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </footer>
     </main>
 
-    <footer>
-        <p>© 2025 Conaire Deagan</p>
-        <div class="footer-social">
-            <a href="https://orcid.org/0009-0008-4420-5848" target="_blank"><i class="ai ai-orcid"></i></a>
-            <a href="https://bsky.app/profile/did:plc:4s7mco7btvhtu2iqoqcnf6vp" target="_blank">○</a>
-            <a href="https://github.com/ConaireD" target="_blank">◐</a>
-            <a href="https://www.linkedin.com/in/conaire-deagan-7a6569159" target="_blank">▢</a>
-        </div>
-    </footer>
-
     <script>
+        // Theme toggle
         function setTheme(theme) {
             document.documentElement.setAttribute('data-theme', theme);
             localStorage.setItem('theme', theme);
@@ -1209,6 +1206,41 @@
 
         const savedTheme = localStorage.getItem('theme') || 'dark';
         setTheme(savedTheme);
+
+        // Profile image rotation
+        const profileImage = document.getElementById('profile-image');
+        const images = ['images/profile4.jpg', 'images/profile3.jpg', 'images/profile2.jpg'];
+        let currentImageIndex = 0;
+
+        function changeImage() {
+            currentImageIndex = (currentImageIndex + 1) % images.length;
+            profileImage.style.opacity = 0;
+            setTimeout(() => {
+                profileImage.src = images[currentImageIndex];
+                profileImage.style.opacity = 1;
+            }, 300);
+        }
+
+        setInterval(changeImage, 5000);
+
+        // Parallax effect on sidebar
+        (function() {
+            var sidebar = document.getElementById('sidebar');
+            
+            function handleParallax() {
+                if (window.innerWidth > 1024) {
+                    var scrollPos = window.pageYOffset;
+                    sidebar.style.backgroundPosition = '135deg, center ' + (-scrollPos * 0.15) + 'px';
+                }
+            }
+            
+            window.addEventListener('scroll', handleParallax);
+            window.addEventListener('resize', function() {
+                if (window.innerWidth <= 1024) {
+                    sidebar.style.backgroundPosition = '';
+                }
+            });
+        })();
     </script>
 </body>
 </html>
