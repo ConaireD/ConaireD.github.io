@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Conaire Deagan — Astrophysics PhD Candidate</title>
-<meta name="description" content="Conaire Deagan — Astrophysics PhD Candidate at UNSW. Researching stellar activity, astrometry, and exoplanets.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,97 +14,98 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
 
 <style>
-/* ================================
-   COLOUR SYSTEM (MID-CENTURY)
-   ================================ */
+
+/* ===============================
+   COLOUR SYSTEM (MCM)
+   =============================== */
 :root {
     --bg-main: #f5f0e8;
-    --bg-alt: #ebe5db;
+    --bg-sidebar: #ebe5db;
 
     --text-main: #1f1f1f;
     --text-muted: #6f6a64;
 
-    --accent-teal: #2f6f73;
-    --accent-ochre: #d6a94c;
-    --accent-orange: #c4622d;
+    --teal: #2f6f73;
+    --ochre: #d6a94c;
+    --orange: #c4622d;
 
     --rule: #cfc7bb;
 }
 
-/* ================================
-   GLOBAL RESET
-   ================================ */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
-}
+/* ===============================
+   RESET
+   =============================== */
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
     font-family: Inter, system-ui, sans-serif;
     background: var(--bg-main);
     color: var(--text-main);
     line-height: 1.7;
-    font-size: 16px;
 }
 
-/* ================================
-   PAGE GRID
-   ================================ */
-.page {
+/* ===============================
+   LAYOUT
+   =============================== */
+#container {
     display: grid;
-    grid-template-columns: 320px 1fr;
+    grid-template-columns: 340px 1fr;
     min-height: 100vh;
 }
 
 @media (max-width: 900px) {
-    .page {
-        grid-template-columns: 1fr;
-    }
+    #container { grid-template-columns: 1fr; }
 }
 
-/* ================================
-   SIDEBAR / HEADER
-   ================================ */
-header {
-    background: var(--bg-alt);
-    padding: 3rem 2.5rem;
+/* ===============================
+   SIDEBAR WITH PARALLAX
+   =============================== */
+#sidebar {
+    position: relative;
+    overflow: hidden;
+    background: var(--bg-sidebar);
     border-right: 1px solid var(--rule);
 }
 
-@media (max-width: 900px) {
-    header {
-        border-right: none;
-        border-bottom: 1px solid var(--rule);
-    }
+#sidebar::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("images/Jupiter.jpg");
+    background-size: cover;
+    background-position: center;
+    transform: translateY(0);
+    z-index: 0;
 }
 
-.jupiter-panel {
-    width: 220px;
-    aspect-ratio: 1 / 1;
-    border: 2px solid var(--rule);
-    margin-bottom: 2.5rem;
+#sidebar-content {
+    position: relative;
+    z-index: 1;
+    padding: 3rem 2.5rem;
 }
 
-.jupiter-panel img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
+/* Jupiter band overlay */
+.jupiter-bands {
+    position: absolute;
+    inset: 0;
+    background:
+        repeating-linear-gradient(
+            to bottom,
+            rgba(245,240,232,0.85) 0px,
+            rgba(245,240,232,0.85) 22px,
+            rgba(245,240,232,0.0) 22px,
+            rgba(245,240,232,0.0) 44px
+        );
+    z-index: 1;
 }
 
-.profile {
-    margin-bottom: 2rem;
-}
-
+/* ===============================
+   PROFILE
+   =============================== */
 .profile h1 {
     font-family: "Instrument Serif", Georgia, serif;
+    font-size: 2.1rem;
     font-weight: 400;
-    font-size: 2rem;
     margin-bottom: 0.5rem;
 }
 
@@ -114,7 +114,9 @@ header {
     color: var(--text-muted);
 }
 
-/* Navigation */
+/* ===============================
+   GEOMETRIC NAV
+   =============================== */
 nav {
     margin-top: 3rem;
 }
@@ -124,57 +126,67 @@ nav ul {
 }
 
 nav li {
-    margin-bottom: 0.75rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.9rem;
+}
+
+.nav-dot {
+    width: 8px;
+    height: 8px;
+    background: var(--orange);
 }
 
 nav a {
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 0.8rem;
     color: var(--text-main);
     text-decoration: none;
-    font-size: 0.85rem;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
 }
 
 nav a:hover {
-    color: var(--accent-orange);
+    color: var(--teal);
 }
 
-/* Social */
+/* ===============================
+   SOCIAL
+   =============================== */
 .social {
     display: flex;
-    gap: 0.75rem;
+    gap: 0.8rem;
     margin-top: 2.5rem;
 }
 
 .social a {
     color: var(--text-main);
-    font-size: 1rem;
 }
 
-.social a:hover {
-    color: var(--accent-teal);
-}
-
-/* ================================
+/* ===============================
    MAIN CONTENT
-   ================================ */
+   =============================== */
 main {
     padding: 4rem 4rem 3rem;
 }
 
 @media (max-width: 900px) {
-    main {
-        padding: 2.5rem 1.75rem;
-    }
+    main { padding: 2.5rem 1.75rem; }
 }
 
-/* Sections */
-section {
-    margin-bottom: 4rem;
+/* ===============================
+   SECTION HEADER WITH ARC
+   =============================== */
+.section {
+    margin-bottom: 4.5rem;
+    position: relative;
 }
 
-section:last-child {
-    margin-bottom: 0;
+.section-header {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
 }
 
 .section-title {
@@ -182,46 +194,46 @@ section:last-child {
     font-size: 1.5rem;
     font-weight: 400;
     text-transform: uppercase;
-    letter-spacing: 0.12em;
-    margin-bottom: 1.5rem;
+    letter-spacing: 0.14em;
 }
 
-/* Divider */
-.rule {
-    border-top: 1px solid var(--rule);
-    margin: 2rem 0;
+/* Arc motif */
+.arc {
+    width: 48px;
+    height: 48px;
+    border: 2px solid var(--teal);
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+    border-radius: 50%;
 }
 
-/* ================================
+/* ===============================
    TEXT
-   ================================ */
+   =============================== */
 p {
     max-width: 720px;
     margin-bottom: 1rem;
 }
 
 a {
-    color: var(--accent-teal);
+    color: var(--teal);
     text-decoration: none;
 }
 
-a:hover {
-    color: var(--accent-orange);
-}
+a:hover { color: var(--orange); }
 
-/* ================================
-   LIST MODULES (EDITORIAL STYLE)
-   ================================ */
+/* ===============================
+   MODULES (RULE-BASED)
+   =============================== */
 .module {
+    padding: 1.3rem 0;
     border-top: 1px solid var(--rule);
-    padding: 1.25rem 0;
 }
 
 .module h3 {
     font-family: "Instrument Serif", Georgia, serif;
     font-weight: 400;
-    font-size: 1.15rem;
-    margin-bottom: 0.25rem;
+    margin-bottom: 0.3rem;
 }
 
 .module p {
@@ -229,50 +241,9 @@ a:hover {
     color: var(--text-muted);
 }
 
-/* ================================
-   GRIDS
-   ================================ */
-.grid {
-    display: grid;
-    gap: 2rem;
-}
-
-.grid.two {
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-}
-
-/* ================================
-   BUTTONS (FLAT)
-   ================================ */
-.actions {
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
-    margin-top: 1.5rem;
-}
-
-.button {
-    padding: 0.6rem 1.2rem;
-    border: 1px solid var(--rule);
-    font-size: 0.8rem;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--text-main);
-}
-
-.button.primary {
-    background: var(--accent-orange);
-    border-color: var(--accent-orange);
-    color: #fff;
-}
-
-.button:hover {
-    border-color: var(--accent-teal);
-}
-
-/* ================================
+/* ===============================
    FOOTER
-   ================================ */
+   =============================== */
 footer {
     margin-top: 4rem;
     padding-top: 1.5rem;
@@ -280,109 +251,98 @@ footer {
     font-size: 0.8rem;
     color: var(--text-muted);
 }
+
+/* ===============================
+   PARALLAX SCRIPT TARGET
+   =============================== */
+body.scrolling #sidebar::before {
+    transform: translateY(var(--parallax-offset));
+}
+
 </style>
 </head>
 
 <body>
-<div class="page">
 
-<header>
-    <div class="jupiter-panel">
-        <img src="images/Jupiter.jpg" alt="Jupiter">
+<div id="container">
+
+<aside id="sidebar">
+    <div class="jupiter-bands"></div>
+    <div id="sidebar-content">
+        <div class="profile">
+            <h1>Conaire Deagan</h1>
+            <p>Astrophysics PhD Candidate<br>University of New South Wales</p>
+        </div>
+
+        <nav>
+            <ul>
+                <li><div class="nav-dot"></div><a href="#about">About</a></li>
+                <li><div class="nav-dot"></div><a href="#research">Research</a></li>
+                <li><div class="nav-dot"></div><a href="#publications">Publications</a></li>
+                <li><div class="nav-dot"></div><a href="#talks">Talks</a></li>
+                <li><div class="nav-dot"></div><a href="#teaching">Teaching</a></li>
+                <li><div class="nav-dot"></div><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+
+        <div class="social">
+            <a href="https://orcid.org/0009-0008-4420-5848"><i class="ai ai-orcid"></i></a>
+            <a href="https://github.com/ConaireD"><i class="fab fa-github"></i></a>
+            <a href="mailto:c.deagan@unsw.edu.au"><i class="fas fa-envelope"></i></a>
+        </div>
     </div>
-
-    <div class="profile">
-        <h1>Conaire Deagan</h1>
-        <p>Astrophysics PhD Candidate<br>University of New South Wales</p>
-    </div>
-
-    <nav>
-        <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#research">Research</a></li>
-            <li><a href="#publications">Publications</a></li>
-            <li><a href="#talks">Talks</a></li>
-            <li><a href="#posters">Posters</a></li>
-            <li><a href="#teaching">Teaching</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
-
-    <div class="social">
-        <a href="https://orcid.org/0009-0008-4420-5848"><i class="ai ai-orcid"></i></a>
-        <a href="https://github.com/ConaireD"><i class="fab fa-github"></i></a>
-        <a href="mailto:c.deagan@unsw.edu.au"><i class="fas fa-envelope"></i></a>
-    </div>
-</header>
+</aside>
 
 <main>
 
-<section id="about">
-    <div class="section-title">About</div>
+<section id="about" class="section">
+    <div class="section-header">
+        <div class="arc"></div>
+        <div class="section-title">About</div>
+    </div>
     <p>
         I develop methods to map the surfaces of stars we cannot resolve, using high-precision astrometry to recover
         information invisible to photometry alone. Member of the
         <a href="https://newts.space/">NEWTS research group</a> and science team on the
-        <a href="https://toliman.space/">TOLIMAN</a> mission. Always open to collaboration.
+        <a href="https://toliman.space/">TOLIMAN</a> mission.
     </p>
-
-    <div class="actions">
-        <a class="button primary" href="mailto:c.deagan@unsw.edu.au">Contact</a>
-        <a class="button" href="assets/ConaireDeagan_AcademicResume_Sep2024.pdf">CV</a>
-    </div>
 </section>
 
-<section id="research">
-    <div class="section-title">Research</div>
+<section id="research" class="section">
+    <div class="section-header">
+        <div class="arc"></div>
+        <div class="section-title">Research</div>
+    </div>
 
     <div class="module">
         <h3>Stellar Surface Mapping</h3>
-        <p>Extending spherical-harmonic frameworks using astrometry to access modes invisible to photometry.</p>
+        <p>Spherical-harmonic reconstruction using astrometry.</p>
     </div>
 
     <div class="module">
         <h3>Astrometric Jitter</h3>
-        <p>Reframing stellar jitter as a signal encoding surface structure.</p>
-    </div>
-
-    <div class="module">
-        <h3>Earth-Twin Detection</h3>
-        <p>Astrometry as a path to habitable-zone Earth-mass planets.</p>
+        <p>Encoding stellar surface structure in astrometric signals.</p>
     </div>
 </section>
 
-<section id="publications">
-    <div class="section-title">Publications</div>
+<section id="publications" class="section">
+    <div class="section-header">
+        <div class="arc"></div>
+        <div class="section-title">Publications</div>
+    </div>
 
     <div class="module">
         <h3>Astrometric exoplanet detection survives solar-like stellar contamination</h3>
-        <p>Deagan, C. et al. (2026) — Submitted to MNRAS</p>
-    </div>
-
-    <div class="module">
-        <h3>Inferring hemispheric asymmetries of stellar active regions</h3>
-        <p>Deagan, C. et al. (2026) — <a href="https://arxiv.org/abs/2601.11707">arXiv:2601.11707</a></p>
+        <p>Deagan, C. et al. (2026)</p>
     </div>
 </section>
 
-<section id="talks">
-    <div class="section-title">Talks</div>
-
-    <div class="module">
-        <h3>The surface of unresolved Sun-like stars</h3>
-        <p>Stars in Brisbane / AEW10, 2024</p>
+<section id="contact" class="section">
+    <div class="section-header">
+        <div class="arc"></div>
+        <div class="section-title">Contact</div>
     </div>
-
-    <div class="module">
-        <h3>The place of Astrometry in SETI</h3>
-        <p>Interstellar Frontiers, 2024</p>
-    </div>
-</section>
-
-<section id="contact">
-    <div class="section-title">Contact</div>
-    <p>School of Physics, UNSW Sydney<br>
-       c.deagan@unsw.edu.au</p>
+    <p>c.deagan@unsw.edu.au<br>School of Physics, UNSW Sydney</p>
 </section>
 
 <footer>
@@ -391,5 +351,19 @@ footer {
 
 </main>
 </div>
+
+<script>
+/* ===============================
+   PARALLAX
+   =============================== */
+window.addEventListener("scroll", () => {
+    const offset = window.scrollY * 0.25;
+    document.documentElement.style.setProperty(
+        "--parallax-offset",
+        `${offset}px`
+    );
+});
+</script>
+
 </body>
 </html>
