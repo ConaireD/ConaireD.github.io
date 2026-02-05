@@ -1,248 +1,264 @@
 <!DOCTYPE HTML>
 <html lang="en">
-<head>
-    <title>Conaire Deagan — Astrophysics PhD Candidate</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-    <meta name="description" content="Conaire Deagan — Astrophysics PhD Candidate at UNSW. Research interests include stellar activity, astrometry, exoplanets, and optical physics.">
+	<head>
+		<title>Conaire Deagan - Astrophysics PhD Candidate</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<meta name="description" content="Conaire Deagan - Astrophysics PhD Candidate at UNSW, researching stellar activity, exoplanets, and optical physics.">
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+		<style>
+			.profile-container {
+				position: relative;
+				width: 150px;
+				height: 150px;
+				margin: 0 auto;
+			}
+			.profile-image {
+				width: 100%;
+				height: 100%;
+				border-radius: 50%;
+				object-fit: cover;
+			}
+		</style>
+	</head>
+	<!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-LBB6NP4BPD"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+	
+	  gtag('config', 'G-LBB6NP4BPD');
+	</script>
+	<body class="is-preload">
 
-    <!-- Base template CSS -->
-    <link rel="stylesheet" href="assets/css/main.css" />
+		<!-- Header -->
+		<header id="header">
+			<div class="inner">
+				<div class="profile-container">
+					<img src="images/profile4.jpg" alt="Conaire Deagan" class="profile-image" id="profile-image">
+				</div>
+				<h1><strong>Conaire Deagan</strong></h1>
+				<p>Astrophysics/Astronomy PhD Candidate<br />
+				University of New South Wales</p>
+			</div>
+		</header>
 
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+		<!-- JavaScript for rotating profile images -->
+		<script>
+			const profileImage = document.getElementById('profile-image');
+			const images = ['images/profile4.jpg', 'images/profile3.jpg', 'images/profile2.jpg'];
+			let currentImageIndex = 0;
 
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;600;700&display=swap" rel="stylesheet">
+			function changeImage() {
+				currentImageIndex = (currentImageIndex + 1) % images.length;
+				profileImage.src = images[currentImageIndex];
+			}
 
-    <!-- Academic Style Overrides -->
-    <style>
-        body {
-            font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-            font-size: 16px;
-            line-height: 1.7;
-            color: #1f2933;
-            background-color: #ffffff;
-        }
+			setInterval(changeImage, 5000); // Change image every 5 seconds
+		</script>
+	</body>
+</html>
 
-        p, li {
-            color: #374151;
-        }
+		<!-- Main -->
+			<div id="main">
 
-        h1, h2, h3, h4, header.major h2 {
-            font-family: 'Source Serif 4', Georgia, serif;
-            font-weight: 600;
-            letter-spacing: -0.015em;
-            color: #111827;
-        }
+				<!-- Introduction -->
+					<section id="intro">
+						<header class="major">
+							<h2>I am Conaire Deagan</h2>
+						</header>
+                                                <p>An astrophysics PhD candidate interested in solar-like stellar activity, Wolf-Rayet stars, exoplanets, and optical physics. I am a member of the NEarby Worlds and Their Stars (<a href="https://newts.space/">NEWTS research group</a>), and a science member on the <a href="https://toliman.space/">TOLIMAN</a> project. Additionally, while I don't actively research SETI, it is a research interest of mine and something I like to talk about. I am always open to collaboration, email me if you would like to collaborate. Click on the icons on the left to find my BlueSky, Github, LinkedIn, and Email. Find my full email address at the bottom of this page.</p>
+						<div class="action-buttons">
+							<a href="mailto:c.deagan@unsw.edu.au" class="button icon solid fa-envelope">Email Me</a>
+							<a href="assets/ConaireDeagan_AcademicResume_Sep2024.pdf" class="button icon solid fa-file">Download My CV</a>
+							<a href="https://github.com/ConaireD/UNSW_Astro_Stats_Club" class="button icon solid fa-balance-scale">UNSW AstroStats Club</a>
 
-        h1 { font-size: 2.6rem; }
-        h2 { font-size: 2.1rem; margin-bottom: 1.2rem; }
-        h3 { font-size: 1.25rem; margin-bottom: 0.6rem; }
+						</div>
+					</section>
 
-        section {
-            padding: 5rem 0;
-        }
+				<!-- Research Interests -->
+					<section id="research">
+						<h2>Research Interests</h2>
+						<div class="row">
+							<article class="col-6 col-12-xsmall work-item">
+								<h3>Stellar Activity</h3>
+								<p>Investigating techniques to map large scale magnetic surface features of unresolved stars using high-precision astrometry. Inferring what information is recoverable from stellar surface mapping. </p>
+							</article>
+							<article class="col-6 col-12-xsmall work-item">
+								<h3>Exoplanets</h3>
+								<p>I am particularly interested the "Earth-twin/analogue" class of exoplanets. I want to help understand their local environments in terms of stellar activity, space weather, and habitability. </p>
+							</article>
+							<article class="col-6 col-12-xsmall work-item">
+								<h3>Optical Physics</h3>
+								<p>Developing, characterising, and optimising novel astrophotonic systems to extend the probable exoplanet parameter space to lower mass, habitable zone exoplanets.</p>
+							</article>
+							<article class="col-6 col-12-xsmall work-item">
+								<h3>Wolf-Rayet Stars</h3>
+								<p>These are extremely rare, short lived, extreme stars. In our Milky way, we expect approximately 1000 to exist. Despite their rarity, they make up roughly 15% of all radio stars. I am interested in simultaneous optical and radio observations of these stars, as these should be excellent probes of stellar magnetic physics.</p>
+							</article>
 
-        section > p {
-            max-width: 70ch;
-        }
+						</div>
+					</section>
 
-        a {
-            color: #1d4ed8;
-            text-decoration: none;
-        }
+				<!-- Publications -->
+					<section id="publications">
+						<h2>Latest Publications</h2>
+						<div class="row">
+							<article class="col-12 work-item">
+								<h3>Astrometric exoplanet detection survives solar-like stellar contamination</h3>
+								<p>Deagan, C. et al. (2026) - Coming soon!</p>
+								<a href="#" class="button">Submitted to MNRAS</a>
+							</article>
+							<article class="col-12 work-item">
+							    <h3>Inferring hemispheric asymmetries of stellar active regions through the information content of astrometric signals</h3>
+							    <p>Deagan, C. et al. (2026) – Submitted to MNRAS</p>
+							    <a href="https://arxiv.org/abs/2601.11707" class="button" target="_blank" rel="noopener noreferrer">
+							        Read Preprint
+							    </a>
+							</article>
+						</div>
+					</section>
+				<!-- Talks -->
+					<section id="Talks">
+						<h2>Talks</h2>
+						<p>By default, please assume all figures and results in these presentations are unpublished, and thus please don't share them without my permission, unless they also appear in a publication. </p>
+						<div class="row">
+							<article class="col-6 col-12-xsmall work-item">
+								<h3>The surface of unresolved Sun-like stars</h3>
+								<p>Presented at the Stars in Brisbane / Australian Exoplanet Worshop 10, 2024</p>
+								<a href="https://docs.google.com/presentation/d/1LBe1dyxRpLjH5zy_NYsbD7xu9TwFswhs/edit?usp=sharing&ouid=114202023185536484164&rtpof=true&sd=true" class="button small">View Slides</a>
 
-        a:hover {
-            text-decoration: underline;
-        }
+							</article>
+							<article class="col-6 col-12-xsmall work-item">
+								<h3>Star-Planet Interactions: How tracking star-spots can give insights into planetary architecture, atmospheric composition, and habitability</h3>
+								<p>Presented at the Australian Centre for Astrobiology Seminar, 2024</p>
+								<a href="https://docs.google.com/presentation/d/16frb0oNvWlHP835OL_59c280v4uHUotI/edit?usp=drive_link&ouid=114202023185536484164&rtpof=true&sd=true" class="button small">View Slides</a>
 
-        .button {
-            background: transparent;
-            border: 1px solid #d1d5db;
-            color: #111827;
-            padding: 0.55rem 1.2rem;
-            border-radius: 999px;
-            font-weight: 500;
-            font-size: 0.9rem;
-            transition: all 0.2s ease;
-        }
+							</article>
+							<article class="col-6 col-12-xsmall work-item">
+								<h3>The place of Astrometry in SETI / High Precision Astrometry: Not just for exoplanets</h3>
+								<p>Presented at Interstellar Frontiers: Bridging SETI, Astrobiology, and the SKA, 2024</p>
+								<a href="https://docs.google.com/presentation/d/1LzTpW3TDAsMg_vZapnjtMzetCZsqF_tb/edit?usp=drive_link&ouid=114202023185536484164&rtpof=true&sd=true" class="button small">View Slides</a>
+							</article>
+							<article class="col-6 col-12-xsmall work-item">
+								<h3>Star-spots, stellar dynamos and habitable exoplanet astrometry</h3>
+								<p>Presented at Australian Exoplanet Workshop 9, 2023</p>
+								<a href="https://docs.google.com/presentation/d/1VkNks956BYRCpYMPLSyvjEjprRVmC56C/edit?usp=drive_link&ouid=114202023185536484164&rtpof=true&sd=true" class="button small">View Slides</a>
 
-        .button:hover {
-            background: #111827;
-            color: #ffffff;
-        }
+							</article>
+						</div>
+					</section>
 
-        .work-item {
-            background: #f9fafb;
-            border-radius: 14px;
-            padding: 1.6rem;
-            margin-bottom: 1.5rem;
-        }
+				<!-- Posters -->
+					<section id="posters">
+						<h2>Conference Posters</h2>
+						<div class="row">
+							<article class="col-6 col-12-xsmall work-item">
+								<a href="images/fulls/CoolStars22-ConaireDeagan-Final-UNSWPRINTJOB.pdf" class="image fit thumb"><img src="images/thumbs/CoolStars22-ConaireDeagan-Final.png" alt="Cool Stars 22, 2024 Poster" /></a>
+								<h3>Towards Stellar Obliquities: Recovering Stellar Inclinations via High Precision Astrometric Monitering</h3>
+								<p>Presented at Cool Stars 22, 2024</p>
+								<a href="images/fulls/CoolStars22-ConaireDeagan-Final-UNSWPRINTJOB.pdf" class="button small">View Poster</a>
+							</article>
+							<article class="col-6 col-12-xsmall work-item">
+								<a href="images/fulls/ESSV Conaire Deagan Poster - Final.pdf" class="image fit thumb"><img src="images/thumbs/ESSV Conaire Deagan Poster - Final.png" alt="Extreme Solar Systems V, 2024 Poster" /></a>
+								<h3>Recovering Stellar Inclinatiopn with High Precision Astrometry</h3>
+								<p>Presented at Extreme Solar Systems V, 2024</p>
+								<a href="images/fulls/ESSV Conaire Deagan Poster - Final.pdf" class="button small">View Poster</a>
+							</article>
 
-        #publications .work-item {
-            background: transparent;
-            padding: 1.2rem 0;
-            border-bottom: 1px solid #e5e7eb;
-            border-radius: 0;
-        }
 
-        #publications h3 {
-            font-size: 1.1rem;
-        }
+							<article class="col-6 col-12-xsmall work-item">
+								<a href="images/fulls/ConaireDeagan_ASA_2023_POSTER.pdf" class="image fit thumb"><img src="images/thumbs/ASA2023.png" alt="ASA 2023 Poster" /></a>
+								<h3>Inferring properties of stellar systems via astrometric monitoring</h3>
+								<p>Presented at ASA 2023</p>
+								<a href="images/fulls/ConaireDeagan_ASA_2023_POSTER.pdf" class="button small">View Poster</a>
+							</article>
+						</div>
+					</section>
 
-        .profile-container {
-            width: 150px;
-            height: 150px;
-            margin: 0 auto;
-        }
+				<!-- Teaching -->
+					<section id="teaching">
+						<h2>Teaching Experience</h2>
+						<div class="row">
+							<div class="col-6 col-12-small">
+								<h3>Feedback for Teachers (FFT) Report</h3>
+								<ul>
+									<li>Overall Positive Response Rate: 91.85%</li>
+									<li>Number of Responses: 30</li>
+								</ul>
+							</div>
+							<div class="col-6 col-12-small">
+								<h3>Courses Taught</h3>
+								<ul>
+									<li>QBUS3600: Business Analytics in Practice (Head Tutor) @ USYD </li>
+									<li>QBUS6600: Data Analytics for Business Capstone (Tutor) @ USYD </li>
+									<li>BUSS6002: Data Science in Business (Tutor) @ USYD </li>
+									<li>PHYS4016: Bayesian Data Inference and Machine Learning (Marker) @ USYD </li>
+								</ul>
+							</div>
+						</div>
+					</section>
+					<section id="A challenge">
+						<h2>A challenge</h2>
+						<p>Below is a link to a message. If you can work out what the message says, please contact me. If you correctly work it out, I'll buy you a beer/coffee/chocolate if we ever meet. There are no red herrings or tricks in the message. The message is not encrypted - you don't need to know any cryptography. Good Luck!</p>
+						<a href="https://drive.google.com/file/d/1vGNUS5o24Ky3PzWYD56i0bnSXNPGJ_kK/view?usp=sharing" class="button small">Accept Challenge?</a> 
+                                                <a href="https://forms.gle/dgFWc132VNZNmzV38" class="button small">Post Challenge Survey</a>
+					</section>
 
-        .profile-image {
-            width: 100%;
-            height: 100%;
-            border-radius: 50%;
-            object-fit: cover;
-        }
+				<!-- Contact -->
+					<section id="contact">
+						<h2>Get In Touch</h2>
+						<p>I'm always happy to collaborate on new projects or discuss my research. Feel free to reach out! If you are a student of mine, please contact me via official channels. These are likely listed on the Canvas page.</p>
+						<div class="row">
+							<div class="col-4 col-12-small">
+								<ul class="labeled-icons">
+									<li>
+										<h3 class="icon solid fa-envelope"><span class="label">Email</span></h3>
+										<a href="mailto:c.deagan@unsw.edu.au">c.deagan@unsw.edu.au</a>
+									</li>
+									<li>
+										<h3 class="icon brands fa-linkedin"><span class="label">LinkedIn</span></h3>
+										<a href="https://www.linkedin.com/in/conaire-deagan-7a6569159/">LinkedIn Profile</a>
+									</li>
+									<li>
+										<h3 class="icon solid fa-home"><span class="label">Address</span></h3>
+										School of Physics<br />
+										UNSW Sydney<br />
+										NSW 2052, Australia
+									</li>
+								</ul>
+							</div>
+						</div>
+					</section>
 
-        #footer {
-            font-size: 0.9rem;
-            color: #6b7280;
-        }
-    </style>
+			</div>
 
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LBB6NP4BPD"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-LBB6NP4BPD');
-    </script>
-</head>
+		<!-- Footer -->
+			<footer id="footer">
+				<div class="inner">
+					<ul class="icons">
+						<li><a href="https://web-cdn.bsky.app/profile/did:plc:4s7mco7btvhtu2iqoqcnf6vp" class="icon brands fa-bluesky"><span class="label">BlueSky</span></a></li>
+						<li><a href="https://github.com/ConaireD" class="icon brands fa-github"><span class="label">Github</span></a></li>
+						<li><a href="https://www.linkedin.com/in/conaire-deagan-7a6569159" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+						<li><a href="mailto:c.deagan@unsw.edu.au" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+					</ul>
+					<ul class="copyright">
+						<li>&copy; 2024 Conaire Deagan</li>
+						<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					</ul>
+				</div>
+			</footer>
 
-<body class="is-preload">
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.poptrox.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+			<script src="assets/js/profile-rotator.js"></script>
 
-<!-- Sidebar Header (Parallax Jupiter stays intact via HTML5 UP) -->
-<header id="header">
-    <div class="inner">
-        <div class="profile-container">
-            <img src="images/profile4.jpg" alt="Conaire Deagan" class="profile-image" id="profile-image">
-        </div>
-        <h1><strong>Conaire Deagan</strong></h1>
-        <p>
-            Astrophysics / Astronomy PhD Candidate<br>
-            University of New South Wales
-        </p>
-    </div>
-</header>
-
-<!-- Profile Image Rotator -->
-<script>
-    const profileImage = document.getElementById('profile-image');
-    const images = [
-        'images/profile4.jpg',
-        'images/profile3.jpg',
-        'images/profile2.jpg'
-    ];
-    let currentImageIndex = 0;
-
-    setInterval(() => {
-        currentImageIndex = (currentImageIndex + 1) % images.length;
-        profileImage.src = images[currentImageIndex];
-    }, 12000);
-</script>
-
-<!-- Main Content -->
-<div id="main">
-
-<section id="intro">
-    <header class="major">
-        <h2>About</h2>
-    </header>
-    <p>
-        I am an astrophysics PhD candidate interested in solar-like stellar activity, Wolf–Rayet stars,
-        exoplanets, and optical physics. I am a member of the NEarby Worlds and Their Stars (NEWTS) research
-        group, and a science member on the TOLIMAN project. While I do not actively research SETI, it remains
-        a strong research interest of mine.
-    </p>
-    <div class="action-buttons">
-        <a href="mailto:c.deagan@unsw.edu.au" class="button icon solid fa-envelope">Email</a>
-        <a href="assets/ConaireDeagan_AcademicResume_Sep2024.pdf" class="button icon solid fa-file">CV</a>
-        <a href="https://github.com/ConaireD/UNSW_Astro_Stats_Club" class="button icon solid fa-balance-scale">
-            AstroStats Club
-        </a>
-    </div>
-</section>
-
-<section id="research">
-    <h2>Research Interests</h2>
-    <div class="row">
-        <article class="col-6 col-12-xsmall work-item">
-            <h3>Stellar Activity</h3>
-            <p>Mapping large-scale magnetic features of unresolved stars using high-precision astrometry.</p>
-        </article>
-        <article class="col-6 col-12-xsmall work-item">
-            <h3>Exoplanets</h3>
-            <p>Understanding Earth-analogue environments via stellar activity and space weather.</p>
-        </article>
-        <article class="col-6 col-12-xsmall work-item">
-            <h3>Optical Physics</h3>
-            <p>Astrophotonic systems for detecting low-mass habitable-zone exoplanets.</p>
-        </article>
-        <article class="col-6 col-12-xsmall work-item">
-            <h3>Wolf–Rayet Stars</h3>
-            <p>Simultaneous optical and radio probes of extreme stellar magnetic physics.</p>
-        </article>
-    </div>
-</section>
-
-<section id="publications">
-    <h2>Publications</h2>
-    <article class="work-item">
-        <h3>Astrometric exoplanet detection survives solar-like stellar contamination</h3>
-        <p>Deagan, C. et al. — Manuscript under review</p>
-    </article>
-    <article class="work-item">
-        <h3>Inferring hemispheric asymmetries of stellar active regions through astrometric signals</h3>
-        <p>Deagan, C. et al. (2026)</p>
-        <a href="https://arxiv.org/abs/2601.11707" class="button small" target="_blank">Preprint</a>
-    </article>
-</section>
-
-<section id="contact">
-    <h2>Contact</h2>
-    <p>
-        I am always open to collaboration. Students should contact me via official course channels.
-    </p>
-</section>
-
-</div>
-
-<!-- Footer -->
-<footer id="footer">
-    <div class="inner">
-        <ul class="icons">
-            <li><a href="https://web-cdn.bsky.app/profile/did:plc:4s7mco7btvhtu2iqoqcnf6vp" class="icon brands fa-bluesky"></a></li>
-            <li><a href="https://github.com/ConaireD" class="icon brands fa-github"></a></li>
-            <li><a href="https://www.linkedin.com/in/conaire-deagan-7a6569159" class="icon brands fa-linkedin"></a></li>
-            <li><a href="mailto:c.deagan@unsw.edu.au" class="icon solid fa-envelope"></a></li>
-        </ul>
-        <ul class="copyright">
-            <li>&copy; 2026 Conaire Deagan</li>
-            <li>Design: HTML5 UP</li>
-        </ul>
-    </div>
-</footer>
-
-<!-- Scripts -->
-<script src="assets/js/jquery.min.js"></script>
-<script src="assets/js/jquery.poptrox.min.js"></script>
-<script src="assets/js/browser.min.js"></script>
-<script src="assets/js/breakpoints.min.js"></script>
-<script src="assets/js/util.js"></script>
-<script src="assets/js/main.js"></script>
-
-</body>
+	</body>
 </html>
