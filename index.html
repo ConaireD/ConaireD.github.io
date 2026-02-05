@@ -93,6 +93,65 @@
 		.profile-image {
 		    transition: opacity 0.5s ease-in-out;
 		}
+			/* Modern Publication Layout */
+		.pub-row {
+		    display: flex;
+		    flex-direction: row;
+		    gap: 2rem;
+		    margin-bottom: 4rem;
+		    align-items: flex-start;
+		    border-bottom: 1px solid #eee;
+		    padding-bottom: 3rem;
+		}
+		
+		.pub-image-container {
+		    flex: 0 0 35%; /* Image takes up 35% of the width */
+		}
+		
+		.pub-image-container img {
+		    width: 100%;
+		    height: auto;
+		    border-radius: 8px;
+		    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+		    transition: transform 0.3s ease;
+		}
+		
+		.pub-image-container img:hover {
+		    transform: scale(1.02);
+		}
+		
+		.pub-content {
+		    flex: 1;
+		}
+		
+		.pub-content h3 {
+		    margin-top: 0;
+		    font-size: 1.4rem;
+		    line-height: 1.3;
+		}
+		
+		.pub-authors {
+		    font-size: 0.95rem;
+		    color: #666;
+		    margin-bottom: 0.5rem;
+		}
+		
+		.pub-journal {
+		    font-style: italic;
+		    color: #2A5DB0;
+		    font-weight: 700;
+		    margin-bottom: 1.5rem;
+		}
+		
+		/* Stack vertically on mobile */
+		@media screen and (max-width: 736px) {
+		    .pub-row {
+		        flex-direction: column;
+		    }
+		    .pub-image-container {
+		        flex: 0 0 100%;
+		    }
+		}
 	</style>
 	</head>
 	<!-- Google tag (gtag.js) -->
@@ -173,24 +232,40 @@
 
 				<!-- Publications -->
 					<section id="publications">
-						<h2>Latest Publications</h2>
-						<div class="row">
-							<article class="col-12 work-item">
-							    <h3>Inferring hemispheric asymmetries of stellar active regions through the information content of astrometric signals</h3>
-							    <p>Deagan, C. et al. (2026) – Submitted to MNRAS</p>
-							    <a href="https://arxiv.org/abs/2601.11707" class="button" target="_blank" rel="noopener noreferrer">
-							        Read Preprint
-							    </a>
-							</article>
-
-							<article class="col-12 work-item">
-								<h3>Astrometric exoplanet detection survives solar-like stellar contamination</h3>
-								<p>Deagan, C. et al. (2026)</p>
-								<a href="#" class="button">Submitted to MNRAS</a>
-							</article>
-						</div>
-					</section>
+					    <h2>Latest Publications</h2>
+					
+					    <div class="pub-row">
+					        <div class="pub-image-container">
+					            <img src="images/pubs/asymmetry_paper_fig.png" alt="Stellar active regions figure">
+					        </div>
+					        <div class="pub-content">
+					            <h3>Inferring hemispheric asymmetries of stellar active regions through the information content of astrometric signals</h3>
+					            <p class="pub-authors"><strong>Deagan, C.</strong>, et al.</p>
+					            <p class="pub-journal">Submitted to MNRAS (2026)</p>
+					            <p>We demonstrate how high-precision astrometry can be used to recover information about stellar surface features that are otherwise unresolved.</p>
+					            <ul class="actions">
+					                <li><a href="https://arxiv.org/abs/2601.11707" class="button small">Read Preprint (arXiv)</a></li>
+					            </ul>
+					        </div>
+					    </div>
+					
+					    <div class="pub-row">
+					        <div class="pub-image-container">
+					            <img src="images/pubs/contamination_paper_fig.png" alt="Astrometric detection figure">
+					        </div>
+					        <div class="pub-content">
+					            <h3>Astrometric exoplanet detection survives solar-like stellar contamination</h3>
+					            <p class="pub-authors"><strong>Deagan, C.</strong>, et al.</p>
+					            <p class="pub-journal">Submitted to MNRAS (2026)</p>
+					            <p>An investigation into the limits of planet detection in the presence of stellar noise, confirming the robustness of future astrometric missions.</p>
+					            <ul class="actions">
+					                <li><a href="#" class="button small">Coming Soon</a></li>
+					            </ul>
+					        </div>
+					    </div>
+					</section>				
 				<!-- Talks -->
+				
 					<section id="Talks">
 						<h2>Talks</h2>
 						<p>By default, please assume all figures and results in these presentations are unpublished, and thus please don't share them without my permission, unless they also appear in a publication. </p>
