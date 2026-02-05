@@ -71,6 +71,28 @@
 	    .profile-image {
 	        box-shadow: 0 4px 12px rgba(0,0,0,0.15); /* Soft shadow */
 	    }
+		/* FORCE PROFILE PIC RESET */
+		.profile-container {
+		    position: relative;
+		    width: 150px;       /* Fixed width */
+		    height: 150px;      /* Fixed height */
+		    margin: 0 auto;     /* Centered */
+		    margin-bottom: 1.5em; /* Keep the nice spacing we added */
+		    overflow: hidden;   /* Ensures image stays inside the circle */
+		    border-radius: 50%; /* Circle shape */
+		}
+		
+		.profile-image {
+		    width: 100% !important;  /* Force image to fit container width */
+		    height: 100% !important; /* Force image to fit container height */
+		    object-fit: cover;       /* Prevents stretching */
+		    border-radius: 0;        /* Reset this, the container handles the circle now */
+		}
+		
+		/* Optional: Keep the image rotation fade smooth */
+		.profile-image {
+		    transition: opacity 0.5s ease-in-out;
+		}
 	</style>
 	</head>
 	<!-- Google tag (gtag.js) -->
